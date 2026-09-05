@@ -1,0 +1,50 @@
+{
+  "as_of": "2026-09-05",
+  "owner": "Tcuzzo",
+  "repositories": [
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "Agent harness skills: invariants, blind cross-family tribunal grading, red-first testing, and combo plays for any agent. Programmed, not prompted.",
+      "fork": false,
+      "has_pages": false,
+      "homepage": null,
+      "html_url": "https://github.com/Tcuzzo/backs-aios-skills",
+      "name": "backs-aios-skills",
+      "private": false
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "BUCKS \u2014 a local-first, paper-first trading agent. Your machine, your keys, your broker; risk-banded autonomy with above-band Telegram approval and durable circuit breakers. Honest by design \u2014 no fabricated edge, no promises of profit. MIT.",
+      "fork": false,
+      "has_pages": false,
+      "homepage": null,
+      "html_url": "https://github.com/Tcuzzo/bucks",
+      "name": "bucks",
+      "private": false
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "Hydra \u2014 a local, no-frills autonomous coding & ops agent you run on your own machine. Bring your own model (local Ollama or cloud), a clear approval-based safety model, memory, skills, and an optional Telegram remote. MIT.",
+      "fork": false,
+      "has_pages": false,
+      "homepage": null,
+      "html_url": "https://github.com/Tcuzzo/HydraAgent_public",
+      "name": "HydraAgent_public",
+      "private": false
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "World's first open-source, agentic video production system. 12 pipelines, 52 tools, 500+ agent skills. Turn your AI coding assistant into a full video production studio.",
+      "fork": true,
+      "has_pages": false,
+      "homepage": "https://github.com/calesthio/OpenMontage",
+      "html_url": "https://github.com/Tcuzzo/OpenMontage",
+      "name": "OpenMontage",
+      "private": false
+    }
+  ]
+}

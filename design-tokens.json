@@ -1,0 +1,739 @@
+{
+  "$schema": "https://www.designtokens.org/tr/drafts/format/",
+  "primitive": {
+    "color": {
+      "paper": {
+        "$type": "color",
+        "$value": "oklch(0.975 0.012 83)"
+      },
+      "paperDeep": {
+        "$type": "color",
+        "$value": "oklch(0.935 0.018 78)"
+      },
+      "ink": {
+        "$type": "color",
+        "$value": "oklch(0.205 0.018 245)"
+      },
+      "inkSoft": {
+        "$type": "color",
+        "$value": "oklch(0.39 0.022 245)"
+      },
+      "cyan": {
+        "$type": "color",
+        "$value": "oklch(0.69 0.135 207)"
+      },
+      "cyanDark": {
+        "$type": "color",
+        "$value": "oklch(0.42 0.105 214)"
+      },
+      "orange": {
+        "$type": "color",
+        "$value": "oklch(0.69 0.16 48)"
+      },
+      "green": {
+        "$type": "color",
+        "$value": "oklch(0.56 0.11 160)"
+      },
+      "line": {
+        "$type": "color",
+        "$value": "oklch(0.79 0.025 240)"
+      },
+      "night": {
+        "$type": "color",
+        "$value": "oklch(0.17 0.02 245)"
+      },
+      "nightPanel": {
+        "$type": "color",
+        "$value": "oklch(0.225 0.022 245)"
+      },
+      "nightInset": {
+        "$type": "color",
+        "$value": "oklch(0.285 0.024 245)"
+      },
+      "nightText": {
+        "$type": "color",
+        "$value": "oklch(0.94 0.012 83)"
+      },
+      "nightMuted": {
+        "$type": "color",
+        "$value": "oklch(0.76 0.02 240)"
+      },
+      "nightLine": {
+        "$type": "color",
+        "$value": "oklch(0.43 0.03 240)"
+      },
+      "nightCyan": {
+        "$type": "color",
+        "$value": "oklch(0.78 0.12 207)"
+      },
+      "white": {
+        "$type": "color",
+        "$value": "oklch(1 0 0)"
+      }
+    },
+    "space": {
+      "1": {
+        "$type": "dimension",
+        "$value": {
+          "value": 4,
+          "unit": "px"
+        }
+      },
+      "2": {
+        "$type": "dimension",
+        "$value": {
+          "value": 8,
+          "unit": "px"
+        }
+      },
+      "3": {
+        "$type": "dimension",
+        "$value": {
+          "value": 12,
+          "unit": "px"
+        }
+      },
+      "4": {
+        "$type": "dimension",
+        "$value": {
+          "value": 16,
+          "unit": "px"
+        }
+      },
+      "6": {
+        "$type": "dimension",
+        "$value": {
+          "value": 24,
+          "unit": "px"
+        }
+      },
+      "8": {
+        "$type": "dimension",
+        "$value": {
+          "value": 32,
+          "unit": "px"
+        }
+      },
+      "12": {
+        "$type": "dimension",
+        "$value": {
+          "value": 48,
+          "unit": "px"
+        }
+      },
+      "16": {
+        "$type": "dimension",
+        "$value": {
+          "value": 64,
+          "unit": "px"
+        }
+      }
+    },
+    "radius": {
+      "small": {
+        "$type": "dimension",
+        "$value": {
+          "value": 4,
+          "unit": "px"
+        }
+      },
+      "medium": {
+        "$type": "dimension",
+        "$value": {
+          "value": 10,
+          "unit": "px"
+        }
+      },
+      "round": {
+        "$type": "dimension",
+        "$value": {
+          "value": 999,
+          "unit": "px"
+        }
+      }
+    },
+    "type": {
+      "display": {
+        "$type": "fontFamily",
+        "$value": [
+          "Nimbus Sans Narrow",
+          "Arial Narrow",
+          "sans-serif"
+        ]
+      },
+      "body": {
+        "$type": "fontFamily",
+        "$value": [
+          "C059",
+          "Century Schoolbook",
+          "serif"
+        ]
+      },
+      "mono": {
+        "$type": "fontFamily",
+        "$value": [
+          "Nimbus Mono PS",
+          "monospace"
+        ]
+      }
+    },
+    "fontSize": {
+      "caption": {
+        "$type": "dimension",
+        "$value": {
+          "value": 16,
+          "unit": "px"
+        }
+      },
+      "body": {
+        "$type": "dimension",
+        "$value": {
+          "value": 20,
+          "unit": "px"
+        }
+      },
+      "subhead": {
+        "$type": "dimension",
+        "$value": {
+          "value": 28,
+          "unit": "px"
+        }
+      },
+      "chapter": {
+        "$type": "dimension",
+        "$value": {
+          "value": 58,
+          "unit": "px"
+        }
+      },
+      "display": {
+        "$type": "dimension",
+        "$value": {
+          "value": 104,
+          "unit": "px"
+        }
+      },
+      "displayMin": {
+        "$type": "dimension",
+        "$value": {
+          "value": 56,
+          "unit": "px"
+        }
+      },
+      "chapterMin": {
+        "$type": "dimension",
+        "$value": {
+          "value": 38,
+          "unit": "px"
+        }
+      },
+      "coverSubhead": {
+        "$type": "dimension",
+        "$value": {
+          "value": 34,
+          "unit": "px"
+        }
+      },
+      "deck": {
+        "$type": "dimension",
+        "$value": {
+          "value": 27,
+          "unit": "px"
+        }
+      },
+      "quote": {
+        "$type": "dimension",
+        "$value": {
+          "value": 29,
+          "unit": "px"
+        }
+      },
+      "detail": {
+        "$type": "dimension",
+        "$value": {
+          "value": 17,
+          "unit": "px"
+        }
+      },
+      "kicker": {
+        "$type": "dimension",
+        "$value": {
+          "value": 15,
+          "unit": "px"
+        }
+      },
+      "mobileBody": {
+        "$type": "dimension",
+        "$value": {
+          "value": 18,
+          "unit": "px"
+        }
+      },
+      "mobileDisplay": {
+        "$type": "dimension",
+        "$value": {
+          "value": 54,
+          "unit": "px"
+        }
+      },
+      "mobileQuote": {
+        "$type": "dimension",
+        "$value": {
+          "value": 23,
+          "unit": "px"
+        }
+      }
+    },
+    "elevation": {
+      "flat": {
+        "$type": "shadow",
+        "$value": {
+          "color": "oklch(0.205 0.018 245 / 0)",
+          "offsetX": "0px",
+          "offsetY": "0px",
+          "blur": "0px",
+          "spread": "0px"
+        }
+      },
+      "raised": {
+        "$type": "shadow",
+        "$value": {
+          "color": "oklch(0.205 0.018 245 / 0.12)",
+          "offsetX": "0px",
+          "offsetY": "12px",
+          "blur": "30px",
+          "spread": "0px"
+        }
+      }
+    },
+    "borderWidth": {
+      "hairline": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1,
+          "unit": "px"
+        }
+      },
+      "rule": {
+        "$type": "dimension",
+        "$value": {
+          "value": 2,
+          "unit": "px"
+        }
+      },
+      "focus": {
+        "$type": "dimension",
+        "$value": {
+          "value": 3,
+          "unit": "px"
+        }
+      },
+      "chapter": {
+        "$type": "dimension",
+        "$value": {
+          "value": 5,
+          "unit": "px"
+        }
+      },
+      "callout": {
+        "$type": "dimension",
+        "$value": {
+          "value": 7,
+          "unit": "px"
+        }
+      },
+      "cover": {
+        "$type": "dimension",
+        "$value": {
+          "value": 14,
+          "unit": "px"
+        }
+      }
+    },
+    "landing": {
+      "site-max": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1280,
+          "unit": "px"
+        }
+      },
+      "s20": {
+        "$type": "dimension",
+        "$value": {
+          "value": 80,
+          "unit": "px"
+        }
+      },
+      "s24": {
+        "$type": "dimension",
+        "$value": {
+          "value": 96,
+          "unit": "px"
+        }
+      },
+      "font-landing-title": {
+        "$type": "dimension",
+        "$value": {
+          "value": 128,
+          "unit": "px"
+        }
+      },
+      "font-landing-mobile-title": {
+        "$type": "dimension",
+        "$value": {
+          "value": 64,
+          "unit": "px"
+        }
+      },
+      "font-landing-feature": {
+        "$type": "dimension",
+        "$value": {
+          "value": 48,
+          "unit": "px"
+        }
+      },
+      "hero-portrait-width": {
+        "$type": "dimension",
+        "$value": {
+          "value": 480,
+          "unit": "px"
+        }
+      },
+      "research-art-width": {
+        "$type": "dimension",
+        "$value": {
+          "value": 400,
+          "unit": "px"
+        }
+      },
+      "landing-copy-measure": {
+        "$type": "dimension",
+        "$value": {
+          "value": 560,
+          "unit": "px"
+        }
+      },
+      "hero-film-ratio": {
+        "$type": "number",
+        "$value": 1.7777777777777777
+      },
+      "hero-portrait-ratio": {
+        "$type": "number",
+        "$value": 0.8
+      }
+    }
+  },
+  "semantic": {
+    "surface": {
+      "page": {
+        "$type": "color",
+        "$value": "{primitive.color.paper}"
+      },
+      "panel": {
+        "$type": "color",
+        "$value": "{primitive.color.white}"
+      },
+      "inset": {
+        "$type": "color",
+        "$value": "{primitive.color.paperDeep}"
+      }
+    },
+    "text": {
+      "primary": {
+        "$type": "color",
+        "$value": "{primitive.color.ink}"
+      },
+      "secondary": {
+        "$type": "color",
+        "$value": "{primitive.color.inkSoft}"
+      },
+      "signal": {
+        "$type": "color",
+        "$value": "{primitive.color.cyanDark}"
+      }
+    },
+    "border": {
+      "$type": "color",
+      "$value": "{primitive.color.line}"
+    },
+    "accent": {
+      "primary": {
+        "$type": "color",
+        "$value": "{primitive.color.cyan}"
+      },
+      "secondary": {
+        "$type": "color",
+        "$value": "{primitive.color.orange}"
+      },
+      "verified": {
+        "$type": "color",
+        "$value": "{primitive.color.green}"
+      },
+      "focus": {
+        "$type": "color",
+        "$value": "{primitive.color.cyanDark}"
+      }
+    },
+    "motion": {
+      "enterDuration": {
+        "$type": "duration",
+        "$value": {
+          "value": 180,
+          "unit": "ms"
+        }
+      },
+      "stateDuration": {
+        "$type": "duration",
+        "$value": {
+          "value": 120,
+          "unit": "ms"
+        }
+      },
+      "ease": {
+        "$type": "cubicBezier",
+        "$value": [
+          0.2,
+          0.8,
+          0.2,
+          1
+        ]
+      }
+    },
+    "theme": {
+      "light": {
+        "page": {
+          "$type": "color",
+          "$value": "{primitive.color.paper}"
+        },
+        "panel": {
+          "$type": "color",
+          "$value": "{primitive.color.white}"
+        },
+        "inset": {
+          "$type": "color",
+          "$value": "{primitive.color.paperDeep}"
+        },
+        "text": {
+          "$type": "color",
+          "$value": "{primitive.color.ink}"
+        },
+        "muted": {
+          "$type": "color",
+          "$value": "{primitive.color.inkSoft}"
+        },
+        "signal": {
+          "$type": "color",
+          "$value": "{primitive.color.cyanDark}"
+        },
+        "border": {
+          "$type": "color",
+          "$value": "{primitive.color.line}"
+        }
+      },
+      "dark": {
+        "page": {
+          "$type": "color",
+          "$value": "{primitive.color.night}"
+        },
+        "panel": {
+          "$type": "color",
+          "$value": "{primitive.color.nightPanel}"
+        },
+        "inset": {
+          "$type": "color",
+          "$value": "{primitive.color.nightInset}"
+        },
+        "text": {
+          "$type": "color",
+          "$value": "{primitive.color.nightText}"
+        },
+        "muted": {
+          "$type": "color",
+          "$value": "{primitive.color.nightMuted}"
+        },
+        "signal": {
+          "$type": "color",
+          "$value": "{primitive.color.nightCyan}"
+        },
+        "border": {
+          "$type": "color",
+          "$value": "{primitive.color.nightLine}"
+        }
+      }
+    },
+    "landing": {
+      "site-max": {
+        "$type": "dimension",
+        "$value": "{primitive.landing.site-max}"
+      },
+      "s20": {
+        "$type": "dimension",
+        "$value": "{primitive.landing.s20}"
+      },
+      "s24": {
+        "$type": "dimension",
+        "$value": "{primitive.landing.s24}"
+      },
+      "font-landing-title": {
+        "$type": "dimension",
+        "$value": "{primitive.landing.font-landing-title}"
+      },
+      "font-landing-mobile-title": {
+        "$type": "dimension",
+        "$value": "{primitive.landing.font-landing-mobile-title}"
+      },
+      "font-landing-feature": {
+        "$type": "dimension",
+        "$value": "{primitive.landing.font-landing-feature}"
+      },
+      "hero-portrait-width": {
+        "$type": "dimension",
+        "$value": "{primitive.landing.hero-portrait-width}"
+      },
+      "research-art-width": {
+        "$type": "dimension",
+        "$value": "{primitive.landing.research-art-width}"
+      },
+      "landing-copy-measure": {
+        "$type": "dimension",
+        "$value": "{primitive.landing.landing-copy-measure}"
+      },
+      "hero-film-ratio": {
+        "$type": "number",
+        "$value": "{primitive.landing.hero-film-ratio}"
+      },
+      "hero-portrait-ratio": {
+        "$type": "number",
+        "$value": "{primitive.landing.hero-portrait-ratio}"
+      }
+    }
+  },
+  "component": {
+    "page": {
+      "maxWidth": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1120,
+          "unit": "px"
+        }
+      },
+      "gutter": {
+        "$type": "dimension",
+        "$value": "{primitive.space.8}"
+      }
+    },
+    "figure": {
+      "radius": {
+        "$type": "dimension",
+        "$value": "{primitive.radius.medium}"
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{semantic.border}"
+      },
+      "bleed": {
+        "$type": "dimension",
+        "$value": {
+          "value": 72,
+          "unit": "px"
+        }
+      },
+      "halfBleed": {
+        "$type": "dimension",
+        "$value": {
+          "value": 36,
+          "unit": "px"
+        }
+      }
+    },
+    "callout": {
+      "padding": {
+        "$type": "dimension",
+        "$value": "{primitive.space.6}"
+      },
+      "signal": {
+        "$type": "color",
+        "$value": "{semantic.accent.primary}"
+      }
+    },
+    "cover": {
+      "minHeight": {
+        "$type": "dimension",
+        "$value": {
+          "value": 880,
+          "unit": "px"
+        }
+      },
+      "textMeasure": {
+        "$type": "dimension",
+        "$value": {
+          "value": 760,
+          "unit": "px"
+        }
+      },
+      "titleMeasure": {
+        "$type": "dimension",
+        "$value": {
+          "value": 900,
+          "unit": "px"
+        }
+      }
+    },
+    "chapter": {
+      "topGap": {
+        "$type": "dimension",
+        "$value": {
+          "value": 110,
+          "unit": "px"
+        }
+      }
+    },
+    "landing": {
+      "site-max": {
+        "$type": "dimension",
+        "$value": "{semantic.landing.site-max}"
+      },
+      "s20": {
+        "$type": "dimension",
+        "$value": "{semantic.landing.s20}"
+      },
+      "s24": {
+        "$type": "dimension",
+        "$value": "{semantic.landing.s24}"
+      },
+      "font-landing-title": {
+        "$type": "dimension",
+        "$value": "{semantic.landing.font-landing-title}"
+      },
+      "font-landing-mobile-title": {
+        "$type": "dimension",
+        "$value": "{semantic.landing.font-landing-mobile-title}"
+      },
+      "font-landing-feature": {
+        "$type": "dimension",
+        "$value": "{semantic.landing.font-landing-feature}"
+      },
+      "hero-portrait-width": {
+        "$type": "dimension",
+        "$value": "{semantic.landing.hero-portrait-width}"
+      },
+      "research-art-width": {
+        "$type": "dimension",
+        "$value": "{semantic.landing.research-art-width}"
+      },
+      "landing-copy-measure": {
+        "$type": "dimension",
+        "$value": "{semantic.landing.landing-copy-measure}"
+      },
+      "hero-film-ratio": {
+        "$type": "number",
+        "$value": "{semantic.landing.hero-film-ratio}"
+      },
+      "hero-portrait-ratio": {
+        "$type": "number",
+        "$value": "{semantic.landing.hero-portrait-ratio}"
+      }
+    }
+  }
+}

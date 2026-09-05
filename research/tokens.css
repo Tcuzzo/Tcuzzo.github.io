@@ -1,0 +1,86 @@
+/* Generated from design-tokens.json. styles.css consumes these tokens only. */
+:root {
+  --paper: oklch(0.975 0.012 83);
+  --paper-deep: oklch(0.935 0.018 78);
+  --panel: oklch(1 0 0);
+  --ink: oklch(0.205 0.018 245);
+  --ink-soft: oklch(0.39 0.022 245);
+  --cyan: oklch(0.69 0.135 207);
+  --cyan-dark: oklch(0.42 0.105 214);
+  --orange: oklch(0.69 0.16 48);
+  --green: oklch(0.56 0.11 160);
+  --line: oklch(0.79 0.025 240);
+  --focus: oklch(0.42 0.105 214);
+  --shadow: 0 12px 30px oklch(0.205 0.018 245 / 0.12);
+  --font-display: "Nimbus Sans Narrow", "Arial Narrow", sans-serif;
+  --font-body: "C059", "Century Schoolbook", serif;
+  --font-mono: "Nimbus Mono PS", monospace;
+  --font-caption: 16px;
+  --font-body-size: 20px;
+  --font-subhead: 28px;
+  --font-chapter: 58px;
+  --font-chapter-min: 38px;
+  --font-display-size: 104px;
+  --font-display-min: 56px;
+  --font-cover-subhead: 34px;
+  --font-deck: 27px;
+  --font-quote: 29px;
+  --font-detail: 17px;
+  --font-kicker: 15px;
+  --font-mobile-body: 18px;
+  --font-mobile-display: 54px;
+  --font-mobile-quote: 23px;
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s6: 24px;
+  --s8: 32px;
+  --s12: 48px;
+  --s16: 64px;
+  --r-small: 4px;
+  --r-medium: 10px;
+  --border-hairline: 1px;
+  --border-rule: 2px;
+  --border-focus: 3px;
+  --border-chapter: 5px;
+  --border-callout: 7px;
+  --border-cover: 14px;
+  --max: 1120px;
+  --cover-min-height: 880px;
+  --cover-text-measure: 760px;
+  --cover-title-measure: 900px;
+  --chapter-top-gap: 110px;
+  --figure-bleed: 72px;
+  --figure-half-bleed: 36px;
+  --motion-enter: 180ms;
+  --motion-state: 120ms;
+  --motion-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: oklch(0.17 0.02 245);
+    --paper-deep: oklch(0.285 0.024 245);
+    --panel: oklch(0.225 0.022 245);
+    --ink: oklch(0.94 0.012 83);
+    --ink-soft: oklch(0.76 0.02 240);
+    --cyan-dark: oklch(0.78 0.12 207);
+    --line: oklch(0.43 0.03 240);
+    --focus: oklch(0.78 0.12 207);
+    --shadow: 0 12px 30px oklch(0.02 0.01 245 / 0.35);
+  }
+}
+
+@media print {
+  :root {
+    --paper: oklch(0.975 0.012 83);
+    --paper-deep: oklch(0.935 0.018 78);
+    --panel: oklch(1 0 0);
+    --ink: oklch(0.205 0.018 245);
+    --ink-soft: oklch(0.39 0.022 245);
+    --cyan-dark: oklch(0.42 0.105 214);
+    --line: oklch(0.79 0.025 240);
+    --focus: oklch(0.42 0.105 214);
+  }
+}

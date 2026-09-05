@@ -1,0 +1,14 @@
+/* Landing-only aliases from design-tokens.json; research tokens are unchanged. */
+:root {
+  --site-max: 1280px;
+  --s20: 80px;
+  --s24: 96px;
+  --font-landing-title: 128px;
+  --font-landing-mobile-title: 64px;
+  --font-landing-feature: 48px;
+  --hero-portrait-width: 480px;
+  --research-art-width: 400px;
+  --landing-copy-measure: 560px;
+  --hero-film-ratio: 1.7777777777777777;
+  --hero-portrait-ratio: 0.8;
+}

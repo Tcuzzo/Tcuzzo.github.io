@@ -1,0 +1,13 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "version": 1,
+  "metadata": {
+    "component": {
+      "type": "application",
+      "name": "BACKS public landing and research site",
+      "version": "2026-09-05"
+    }
+  },
+  "components": []
+}

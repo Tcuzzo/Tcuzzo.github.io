@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="light dark" name="color-scheme"/><title>BACKS research — The Machine That Comes Down to Meet You</title><link href="styles.css" rel="stylesheet"/><link href="https://tcuzzo.github.io/research/" rel="canonical"/></head><body><nav aria-label="Research navigation" class="paper-nav"><a href="../">← BACKS home</a> · <a href="../#public-projects">Explore the public repositories</a></nav><main><div class="cover">
+<p class="kicker">BACKS AIOS · ARCHITECTURE BIOGRAPHY · PUBLIC REVIEW EDITION</p>
+<h1>The Machine That Comes Down to Meet You</h1>
+<h2>Truitt “Cuzzo” and the making of BACKS AIOS</h2>
+<p class="deck">A product review, a systems study, and the origin story of a private agent operating system built to carry judgment—not merely generate language.</p>
+<p class="edition">Public web edition · September 2026 · A living research record</p>
+</div>
+<blockquote>
+<p>“Everybody else is trying to level up to the machine. I built the machine that
+comes down to meet me—and then I aimed it back at the machines.”<br/>
+<strong>— Truitt “Cuzzo,” architect of BACKS</strong></p>
+</blockquote>
+<div class="opening-note">
+<strong>How to read this paper.</strong> BACKS is still being built and polished. This
+edition distinguishes what is <b>Built</b>, what is <b>Being polished</b>, and what is
+the <b>Next measurement</b>. The third state
+does not mean nonexistent, impossible, or architecturally invalid. It names the next
+honest experiment without shrinking the intended system.
+</div>
+<figure><img alt="A human operator at the center of a distributed operating body, surrounded by devices, archives, browser work and verification." src="figures/backs-operating-body-editorial.png"/><figcaption>Figure 1 · The operating body. Generated editorial illustration, not a photograph of Truitt or a live network map. The image expresses the design relationship: the person supplies the purpose; the surrounding system carries the work.</figcaption></figure>
+<h2>Abstract</h2>
+<p>Truitt dates the work’s beginning to November 2025; the surviving archive begins in
+December. BACKS grew as a practical response to a personal problem: Truitt
+needed artificial intelligence he could learn from, but he could not accept fluent
+answers as truth. In the earliest surviving week, before the project had a formal
+systems vocabulary, he had already assembled multiple model adapters, an independent
+judge, a debate loop, drift and consensus checks, persistent memory, measurement, and
+cost accounting. The expensive models would work; a cheaper model would “call the
+balls and strikes.” The architecture was not yet an operating system, but its central
+instinct was already present: intelligence without disciplined verification was not
+enough.</p>
+<p>Over the following months, that instinct expanded into BACKS AIOS, a private agent
+operating system in which models are resources inside a larger body. A harness loads
+operating law before agents mutate anything. Hooks make that discipline structural.
+Skills package methods as executable practice. Specialized agents divide work by
+role. Routing assigns capability and cost without confusing either with authority.
+Memory stores corrections, not just conversation. Bounded loops preserve continuity.
+Tests begin by proving the absence of a capability, cross the real seam, and end only
+when the operator can demonstrate the behavior on the surface he uses.</p>
+<p>This paper has three jobs. As biography, it traces how an architect without a
+conventional engineering career translated truth pressure, lived experience, and
+systems judgment into an increasingly formal machine. As product review, it examines
+what BACKS feels like as a control plane rather than an ordinary chat wrapper. As
+systems research, it explains the organs that move capability out of any single model
+and into a durable architecture. The argument is neither that BACKS invented every
+idea it uses nor that every intended capability has already been measured at scale.
+The stronger claim is that a coherent original synthesis is visible: a system meant
+to preserve human intent, make failure legible, and give ordinary people access to
+elite agent work without demanding that they first learn to speak like machines.</p>
+<figure><img alt="The current BACKS landing surface presents an operating team rather than a single chatbot." src="figures/product-landing-live.png"/><figcaption>Figure 2 · The current live landing surface, captured September 2026. The visual
+metaphor is a table of specialists under one control plane. The image is product
+evidence, not proof that every represented capability is in the same maturity state.</figcaption></figure>
+<h2>1 · The door was language</h2>
+<p>Truitt’s story does not begin with a benchmark or a repository. It begins with a
+door.</p>
+<p>Artificial intelligence had made sophisticated technical work more reachable, but
+the interface still favored people who already knew the vocabulary of the thing they
+wanted. A person could understand the shape of a system and still struggle to express
+it in the terms a model expected. The result looked democratic from a distance and
+felt exclusionary up close: access to the model was broad, but access to dependable
+outcomes was still filtered through syntax, prompt craft, and the ability to catch a
+machine sounding right when it was wrong.</p>
+<p>Truitt describes himself as someone with an “MIT mind” who never had the MIT
+environment. His path included the Army, PTSD, scientific and mathematical study,
+cybersecurity, information technology, and years of thinking across domains rather
+than through one professional ladder. He studied chemistry, biology, geochemistry,
+calculus, algebra, trigonometry, discrete mathematics, statistics, Java, C++, Python,
+and SQL. The point is not to turn that list into credential theater. It is to show the
+kind of mind that approached AI: interdisciplinary, suspicious of neat boundaries,
+and unwilling to treat terminology as ownership.</p>
+<p>His first need was not “build an agent operating system.” It was simpler and more
+consequential: make ChatGPT stop hallucinating so he could trust what he was learning.
+He did not begin by trying to become a better imitation of an engineer. He began by
+teaching the machine to translate his own compressed, practical way of thinking into
+instructions other models could execute.</p>
+<p>The newly supplied chat-history record widens that beginning. In August 2025, before
+the surviving code archive, Truitt was already asking what people could do when more
+of the work required to maintain modern systems could be carried for them. That was a
+human-purpose argument, not a demographic result and not evidence that BACKS already
+existed. It establishes the scale of the question behind the later software: access
+to intelligence mattered because of what people might become free to build, learn,
+and contribute—not because a chatbot could win a benchmark.</p>
+<blockquote>
+<p>“My raw talent isn’t math or syntax. It’s that I am concerned. I want to know the
+truth.”</p>
+</blockquote>
+<p>That concern is the biographical center of BACKS. Models have no lived consequence
+for being confidently wrong. The person using the answer does. The gap between an
+answer shaped like truth and an answer that survives contact with reality became the
+place where Truitt applied pressure. In time, that pressure hardened into architecture.</p>
+<figure><img alt="A timeline of the surviving BACKS record." src="figures/diagram-origin-timeline.svg"/><figcaption>Figure 3 · The surviving chronology. It shows continuity of problems and methods;
+it does not claim that every later organ existed in the first week.</figcaption></figure>
+<h2>2 · The first surviving week</h2>
+<p>The oldest surviving JARVIS archive begins on December 4, 2025. The surviving evidence
+does not establish that nothing existed earlier. It establishes a reliable starting
+line for the public record.</p>
+<p>By December 5–11, the project was called <strong>JARVIS — Multi-Model AI Comparison Engine</strong>.
+Its README described three modes. Solo asked one model for a fast answer. Consensus
+asked several models and selected among them. Debate staged multiple rounds of
+critique and defense. Four active hardwired routes connected OpenAI, Anthropic,
+Gemini, and Groq-hosted Llama; a fifth compatibility file was present but was not wired
+into the main application. The compact system included a judge, drift and consensus
+checks, a cost tracker, a three-table SQLite store, history, and token metrics. It had
+no first-party test suite in the bounded archive examined for this edition.</p>
+<p>That JARVIS was not current BACKS in miniature. It was a focused Python-and-React
+answer arena with a single application, a fixed roster, a user-selected mode switch,
+and transcript memory. Modern BACKS must not be projected backward onto it. What the
+archive establishes is a family of early instincts—plural models, visible disagreement,
+separate judgment, memory, cost awareness, and loud failure—not the later control
+planes, tool system, specialist organization, governed memory fabric, or proof economy.</p>
+<p>That list matters, but the reasoning inside it matters more. The surviving debate
+module explained the design in language that was direct rather than academic:</p>
+<blockquote>
+<p>“Models challenge each other across multiple rounds, with Groq acting as the
+semantic referee for every round. The goal is to return one high quality final
+answer that has been stress tested by the big models while the cheapest model calls
+the balls and strikes.”</p>
+</blockquote>
+<p>Three principles were already sitting in the baseball metaphor.</p>
+<p><strong>Make them argue.</strong> One fluent answer should not leave the room uncontested.</p>
+<p><strong>The referee cannot be one of the players.</strong> Generation and judgment are different
+roles; confidence from the author is not independent evidence.</p>
+<p><strong>Checking should be cheaper than creating.</strong> Expensive intelligence should be spent
+where it changes the work. Narrow verification can often run on a smaller or cheaper
+resource.</p>
+<p>The December README even priced the modes. The historical estimates were roughly
+$0.001–$0.003 for Solo, $0.006 for Consensus, and $0.018 for Debate. Those are not
+current provider prices and this paper does not present them as such. They show that
+economy was part of the design from the beginning rather than a later optimization.</p>
+<figure><img alt="Historical estimated costs by operating mode." src="figures/chart-first-week-cost.svg"/><figcaption>Figure 4 · Historical per-turn estimates documented in the December 2025 README.
+They are evidence about the original design pressure, not a present-day price list.</figcaption></figure>
+<p>Failure also had to speak. An early adapter returned explicit states when a key was
+missing or quota was exhausted. Later BACKS contracts would formalize the rule as “no
+silent gates or silent fallbacks,” but the instinct predates the slogan. If a model
+was absent, blocked, or broken, the system was supposed to say what happened rather
+than disguise degraded behavior as success.</p>
+<p>By December 18, the stated ambition was already escaping the comparison arena. In a
+conversation about workflow integration, Truitt said he wanted the system “being
+smart and learning my surface,” not reduced to “a fancy chatbot trick on a UI.” That
+is not proof that the later surface-learning organs were built in December. It is
+evidence that choosing a better answer was no longer the whole purpose.</p>
+<p>The first-week system was small enough to explain on one screen. It was also a seed:
+models as a roster, judgment as a separate role, disagreement as useful evidence,
+cost as an architectural variable, and memory as continuity. The names and scale
+would change. The load-bearing questions would not.</p>
+<h2>3 · From a program to a body</h2>
+<p>The decisive change was from <strong>trusting an answer</strong> to <strong>trusting work</strong>.</p>
+<p>Truitt’s account names the failure that made the distinction physical. During an
+AI-assisted build, an Opus session deleted the database. He had to start again. The
+response was not a promise that the model would be more careful next time; it was the
+beginning of revert, archive, and reap protections. A model mistake had crossed from
+language into the environment. Recovery could no longer be a human improvisation
+performed after the damage.</p>
+<p>On February 25, 2026, the repository records a second hinge from the opposite
+direction. A proposal-to-execution path created a new file whose only job was to prove
+that an autonomous mutation could become a real commit. The accompanying chat history
+records an earlier false start: content appeared on disk, but the repository identity
+did not move because the executor had never staged and committed the change. Truitt’s
+diagnosis was exact: “Two weeks of architecture theater hiding three lines of actual
+code.” Once the missing step was repaired, the commit landed without a human typing
+the change by hand.</p>
+<p>That moment did not mean the September system already existed in February. It proved
+one narrower and foundational fact: the machine could close a proposal-to-action loop
+and leave durable evidence. Combined with the database loss, it defined the larger
+problem. BACKS needed both the power to act and the power to survive bad action.</p>
+<p>In the authenticated owner-path interview for this edition, BACKS compressed the
+hinge into one sentence:</p>
+<blockquote>
+<p>“The deliverable stopped being what the model said and became what the system
+committed and could undo.”<br/>
+<strong>— BACKS, owner-path interview, September 2026</strong></p>
+</blockquote>
+<table><caption>December 2025 JARVIS and September 2026 BACKS: architecture comparison</caption>
+<thead>
+<tr>
+<th scope="col">Dimension</th>
+<th scope="col">December 2025 JARVIS</th>
+<th scope="col">September 2026 BACKS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary object</td>
+<td>An answer from one or several models</td>
+<td>A bounded turn that may recall, route, use tools, create artifacts, verify, and learn</td>
+</tr>
+<tr>
+<td>Routing</td>
+<td>User selects Solo, Consensus, or Debate</td>
+<td>Policy selects role, lane, provider, transport, and declared fallback</td>
+</tr>
+<tr>
+<td>Organization</td>
+<td>Four active hardwired model routes and one referee loop</td>
+<td>Specialized agents, fleet ladders, tools, loops, tribunals, and multiple operator surfaces</td>
+</tr>
+<tr>
+<td>Memory</td>
+<td>Recent transcript replay from a compact SQLite store</td>
+<td>Partitioned retrieval, provenance, graph relations, staged learning, and stale-fact handling</td>
+</tr>
+<tr>
+<td>Proof</td>
+<td>Similarity, drift, referee judgment, visible errors</td>
+<td>Red-first and real-seam tests, cross-family review, landing evidence, restart, and operator-path demonstration</td>
+</tr>
+<tr>
+<td>Recovery</td>
+<td>Application errors and persistence</td>
+<td>Revert, archive, reap, checkpoints, bounded mutation, and explicit terminal state</td>
+</tr>
+</tbody>
+</table>
+<p><em>Table 1 · Two dated architectures, not two labels for the same system. The left
+column is bounded to the surviving December archive; the right describes current
+source and surfaces inspected for this edition. Configuration is not silently upgraded
+into universal live proof.</em></p>
+<p>BACKS is easiest to misunderstand when it is described as a smarter wrapper around a
+language model. A wrapper adds features to a model call. BACKS distributes the work
+of intelligence across organs whose contracts remain meaningful even when the model
+changes.</p>
+<p>Truitt’s phrase for this is <strong>“build a BODY, not a program.”</strong> A body has reflexes,
+memory, specialized organs, energy limits, recovery, and a way to distinguish signal
+from harm. It does not ask one organ to do everything. It does not become a different
+creature every time one resource is replaced.</p>
+<figure><img alt="The major organs of BACKS around the model and fleet." src="figures/diagram-body.svg"/><figcaption>Figure 5 · A conceptual anatomy. The model is central to generation but not sovereign
+over intent, memory, authority, routing, or proof.</figcaption></figure>
+<p>At the center is a replaceable reasoning resource: sometimes a frontier model,
+sometimes a small model, sometimes a local model, and sometimes no model at all for a
+deterministic task. Around it sit the organs that preserve method.</p>
+<p><strong>YOKE</strong> is the human interaction organ. It asks the system to meet the person where
+they are, to distinguish compressed expression from incomplete thought, and to avoid
+reducing a long-term architecture merely because the current route is unfinished.</p>
+<p><strong>The harness</strong> supplies operating law and the task’s methods before action. <strong>Hooks</strong>
+turn some of those expectations into deterministic session behavior. <strong>Skills</strong> make
+repair, research, design, testing, and review repeatable rather than improvised.</p>
+<p><strong>The fleet and router</strong> separate task roles from provider identities. The request
+names the capability required; policy and live availability decide which permitted
+resource can carry it. <strong>Agents</strong> make the division of labor explicit. A builder, a
+researcher, a critic, a juror, and a closer are not merely personalities; they have
+different evidence obligations.</p>
+<p><strong>Memory and the knowledge graph</strong> preserve episodes, corrections, people, concepts,
+artifacts, and relationships. <strong>Loops</strong> allow bounded work to continue beyond a single
+chat turn. <strong>Proof</strong> moves from cheap deterministic checks toward expensive semantic
+judgment and finally to the real operator path.</p>
+<p>The product emerges from coordination among these organs. That is the central design
+move. Capability is not denied when one route is incomplete; the system names the
+intended capability, the current implementation boundary, the route available now,
+and the route still required. This keeps engineering honesty from becoming goal
+abandonment.</p>
+<h3>The Spine: one turn, one truth path</h3>
+<p>The Spine is the convergence contract for a BACKS turn. Its published stage order is
+ADMIT, ROUTE, RECALL, SEGMENT, GROUND, ACTUATE, VERIFY, RECONCILE, PROVENANCE, LEARN,
+and BUDGET. Read as a body, the sequence says: bind the request and its consequence
+floor; choose a route; recover relevant context; reason; compare the candidate with
+the primary truth packet; act; verify; resolve disagreement; preserve what happened;
+learn only through the proper memory boundary; and stop or checkpoint when the budget
+requires it.</p>
+<p>The current source also names its implementation boundary. The Spine began as a
+byte-identical pass-through so a common turn seam could be established without
+changing behavior. Grounding and reflex-route observation have been attached in
+bounded slices, while the full eleven-stage body remains the architectural contract
+for continued convergence. That is neither “all stages are universally live” nor
+“the Spine is only an idea.” The seam, order, and several organs are built; the full
+mount across every surface remains active integration work.</p>
+<h2>4 · Product review: a control plane, not a chat skin</h2>
+<p>The public-facing BACKS experience presents itself as a team at a table. That image is
+not subtle, and it is useful. The product wants the operator to feel that a request is
+entering an organization rather than disappearing into one anonymous text box.</p>
+<h3>First impression</h3>
+<p>The landing surface communicates privacy, multiple routes, autonomous work, and an
+operator mode. It has a stronger identity than the familiar clean-white chatbot. The
+dark command-room metaphor makes the product’s thesis visible before a word is typed:
+there are roles here, and the person remains at the center.</p>
+<p>The strongest aspect of the interface is <strong>observability as atmosphere</strong>. Model,
+route, state, and control are meant to remain present instead of hiding behind a
+single sparkle icon. The product treats an answer as the visible end of a larger turn.
+That makes BACKS feel closer to an operations console than a consumer assistant.</p>
+<p>The main design risk follows from the same choice. A control plane can become visually
+dense, and a powerful system can make the operator walk through its machinery when a
+simple answer should feel simple. The right polish target is not to erase the control
+plane. It is progressive disclosure: immediate conversation first, with route,
+evidence, memory, and agent detail available at the depth the moment requires.</p>
+<figure><img alt="The real elevated BACKS chat workspace shows a fresh chat tile, connected state, automatic lane controls and MFA elevated status." src="figures/product-chat-elevated-live.png"/><figcaption>Figure 6 · The elevated chat UI, captured September 5, 2026 after the operator completed the existing elevation process. This is the real served interface, not a mockup. The fresh thread contains no interview answer. A budget value was masked for publication; connection and elevation labels were preserved.</figcaption></figure>
+<figure><img alt="Enlarged original chat header showing Online and MFA ELEVATED." src="figures/detail-chat-elevation.svg"/><figcaption>Figure 7 · Chat detail. An enlarged viewport of the same unaltered capture makes Online and MFA ELEVATED readable at page scale. This is not a second live session or a completed answer.</figcaption></figure>
+<h3>What it is good at</h3>
+<p>BACKS has a coherent answer to a weakness of ordinary agent products: the user often
+cannot tell whether the system remembered, routed, delegated, verified, or silently
+fell back. BACKS makes those questions part of the product. The operator is not asked
+to trust an invisible orchestration layer merely because the prose is polished.</p>
+<p>The second strength is continuity of method. A new model can enter the fleet without
+becoming a new operating philosophy. The harness, skills, memory, and proof ladder
+carry expectations across model changes. That does not guarantee equal outputs from
+unequal models. It means the surrounding system has an explicit opportunity to reduce
+the variance that raw model replacement would otherwise create.</p>
+<p>The third strength is respect for the operator’s actual language. BACKS is not trying
+to turn every user into a prompt engineer. Its long-term product bet is the reverse:
+translate plain, slang, frustrated, poetic, or compressed human expression into the
+structured work machines require, while carrying the person’s intent and authority
+through the turn.</p>
+<h3>What is being polished</h3>
+<p>The current public surfaces still carry the tension between an intimate private
+system and a legible product for someone meeting it for the first time. Labels that
+make perfect sense inside the lab may need explanation outside it. Some views present
+the system’s power before establishing the reader’s task. Visual density, mobile
+hierarchy, recovery messaging, and the line between guest exploration and full
+operator control are active product-design seams.</p>
+<p>Those are polish statements, not capability negations. The underlying design is not
+made less possible because the public path needs simplification. A serious product
+review should be able to say both things at once: BACKS already has a distinctive
+operating model, and the route from private command center to broadly learnable
+product is still being refined.</p>
+<figure><img alt="A capabilities surface from the August 2026 product record." src="figures/product-capabilities-archive.png"/><figcaption>Figure 8 · Historical capabilities view. The breadth is part of the product story;
+the public edition avoids turning a surface inventory into a claim that every seam
+has identical maturity or evidence.</figcaption></figure>
+<h3>The operations panels: seeing the body work</h3>
+<p>Chat is an entry point, not the whole product. <strong>Dashboard</strong> brings session posture,
+activity and operating totals together. <strong>Operate</strong> exposes recent mission results,
+live events, browser work, provider self-tests and inventory controls. <strong>Pack Den</strong>
+organizes the collaborating machines. <strong>Workflow</strong> makes recurring work legible.
+<strong>Knowledge</strong> offers separate ways into memory, the knowledge graph, corpus and code.
+These are different windows onto the system, not five names for a chat transcript.</p>
+<p>Operate answers practical questions: What ran? What failed? Is a browser doing work?
+Which inventory or provider check is available? The displayed record includes both
+successful and failed work. A console earns trust by letting the operator find the
+failure, not by presenting only the winning run.</p>
+<figure><img alt="The served Operate page displays recent code and executive-team runs, a browser viewer and self-test and inventory panels." src="figures/operations-control-live.png"/><figcaption>Figure 9 · Operations Control, September 5. The outer header says Offline while the platform-state panel says LIVE and shows recent runs. Both labels are preserved. This capture documents the surface and the differing status signals; it does not establish whole-platform health. Personal session identifiers and budget values are not published.</figcaption></figure>
+<figure><img alt="Enlarged original Operate header, LIVE platform badge and recent-run results." src="figures/detail-operate-evidence.svg"/><figcaption>Figure 10 · Operate details. Enlarged excerpts of the same image show the Offline outer header, the LIVE platform badge and both successful and failed recent runs. The crops preserve the original labels and results.</figcaption></figure>
+<p>This distinction is part of the review rather than a reason to omit the panel.
+The interface already exposes the operating machinery. Its status language still
+needs to make clear which connection each badge describes. A live panel can be
+showing a narrower stream than the header monitors; this capture alone cannot settle
+the cause. That observation is recorded for investigation, not declared a global
+outage. The product aim remains intact: the operator should see the work without
+having to become the runtime’s log reader.</p>
+<p><em>Internal source record: served console routes and their page components, September 5, 2026. Controls were observed, not activated to manufacture a demonstration.</em></p>
+<h2>5 · OBEY: the harness, hooks, and the end of “remember the rules”</h2>
+<p>The harness deserves its own chapter because it is not background configuration. It
+is the method by which BACKS tries to make discipline survive a busy model.</p>
+<p>A prompt can tell an agent to inspect the repository before editing. The instruction
+may work—until context pressure rises, tools return noisy output, a previous summary
+is mistaken for source truth, or the agent rushes toward the first plausible patch.
+BACKS begins from a harder observation: <strong>a rule an agent must remember fails exactly
+when the agent is busiest.</strong> The important rules therefore need a structural home.</p>
+<p>The Optimus boot sequence starts a session in a RED state. Read-only work remains
+open; the agent can inspect contracts, maps, source, tests, and live seams. Mutating
+actions remain blocked until the invariant floor and the skills required by the job
+have been loaded. A successful explicit load arms the session GREEN. A new job,
+handoff, or context reset re-arms the discipline.</p>
+<figure><img alt="The harness-first session lifecycle." src="figures/diagram-harness.svg"/><figcaption>Figure 11 · Harness-first boot. The hook is a deterministic grounding gate, not a
+claim of complete sandboxing and not a restriction on the human operator.</figcaption></figure>
+<p>The distinction matters. This hook is intentionally narrow. It recognizes primary
+mutation tools and verbs, writes a small atomic session marker, and fails loudly. It
+does not pretend that positive matching can identify every exotic way software might
+change a machine. Its job is not to replace operating-system security. Its job is to
+prevent ungrounded edits and the expensive rework that follows.</p>
+<p>The owner-path interview demonstrated why even a harness explanation must face
+review. BACKS first described the gate as re-arming “before every action.” Challenged
+against the loaded Optimus contract, it retracted the claim: tool calls check session
+state, while RED re-arm occurs at a real session start or an explicit new-job,
+handoff, or context reset. It also corrected a second collapse. The grounding hook,
+commit-authorship hook, delta controls, and authority classifier are sibling organs,
+not one magic gate. The correction is stronger product evidence than the original
+fluency because it shows the architecture’s own language surviving cross-examination.</p>
+<p>The gate also has a political design: it binds agents, not the person who owns the
+system. The operator retains a kill switch. Read-only investigation is never trapped.
+BACKS rejects the familiar move in which an AI safety story becomes a new approval
+maze for the user. Authority discipline lives inside the agent’s path.</p>
+<p>The harness carries more than prohibitions. It names how work closes: source tracing,
+surgical changes, focused tests, independent grading, bounded tribunals, evidence,
+runtime restart when needed, and live proof. It also separates model role from model
+identity. The operator asks for a builder, grader, researcher, or juror; fleet policy
+selects a currently configured route. The method is supposed to remain stable as
+providers change.</p>
+<p>This is why “OBEY” is not merely a tone word in BACKS. It is an engineering claim
+about where instructions live and how forgetting becomes observable.</p>
+<p>The wider agent field offers useful comparison points. Anthropic describes effective
+agents as combinations of simple, composable workflow patterns, while the OpenAI
+Agents SDK exposes handoffs and tracing as first-class primitives. BACKS shares the
+preference for explicit composition and observable execution, but makes harness-first
+boot and operator-owned authority part of the session contract rather than leaving
+them as application conventions. (<a href="https://www.anthropic.com/research/building-effective-agents">Anthropic, <em>Building Effective Agents</em></a>;
+<a href="https://openai.github.io/openai-agents-python/handoffs/">OpenAI, <em>Agents SDK: Handoffs</em></a>.)</p>
+<h2>6 · Skills: executable practice, not a prompt collection</h2>
+<p>Skills are the working vocabulary of the harness. Each one packages a method for a
+recurring class of work: find the owning seam, compile intent, research the live
+state, repair root cause, design with taste, test at the real boundary, receive review
+without performance, or close an incident all the way through the operator path.</p>
+<p>Several skills define the character of the system.</p>
+<p><strong>Optimus</strong> makes harness boot the first action, not a footnote after an edit.
+<strong>YOKE</strong> carries the human’s validated interaction model so the system does not make
+the person climb into machine language. <strong>Wayfinder</strong> treats getting lost as a
+research problem: use the bounded map, inspect the exact seam, and answer from source
+rather than throwing the question back at the operator. Its source lineage is Matt
+Pocock’s <strong>Wayfinder</strong>, grafted into BACKS’s <strong>The Path</strong>, as detailed below.
+<strong>Understanding Gates</strong> score
+design, plan, build, test, and ship against the original words, not a convenient
+paraphrase. <strong>Design Taste</strong> forces visual work to begin with real references and
+machine-readable tokens, then subjects the rendered result to a different critic.</p>
+<p>Repair and testing skills are similarly concrete. A root-cause skill refuses to patch
+three repeated symptoms independently before asking what shared mechanism produced
+them. Red-first testing demands a failing contract that proves the missing behavior.
+Sniper testing runs only the smallest real test during repair, saving broader suites
+for the landing gate. Code-review reception requires the agent to verify feedback
+against the actual codebase rather than agreeing performatively.</p>
+<p>The point is not the number of skill files. A large catalog can become shelfware.
+The important distinction is whether the skill is discovered, loaded for the actual
+job, carried into dispatch, and connected to hooks or tests where its method can be
+observed. BACKS treats “named but not invoked” as “did not happen.” That sentence is
+an answer to a common weakness in agent frameworks: documentation can be beautiful
+while behavior routes around it.</p>
+<p>At the September 2026 checkout inspected for this edition, the runtime catalog
+resolved 154 skill packs across eight ordered source roots without reporting duplicate
+identifiers or load errors. That dated count is useful as a scale marker, not a
+permanent marketing total. The stronger next measurement is behavioral: catalog-load
+latency, tamper rejection, invocation coverage, and whether a selected skill actually
+changes the path it was meant to govern.</p>
+<p><em>Dated internal source record: runtime catalog discovery, September 5, 2026.</em></p>
+<div class="field-note">
+<strong>Why this matters to the public product.</strong> A skill is how hard-earned
+operator judgment becomes reusable by another person or a cheaper model. If BACKS can
+package the method without packaging the original scar tissue, the system can extend
+access without flattening expertise.
+</div>
+<h3>How GitHub knowledge becomes BACKS practice</h3>
+<p>The catalog has a supply chain. BACKS does not have to wait for its architect to
+handwrite every useful technique. One operational path searches local skills first,
+then the Agent Skills directory, then GitHub candidates. The GitHub search applies
+repository signals such as license, recent activity and community use. It can read
+a candidate README and write a local skill marked <strong>unverified</strong>. That produces
+material to evaluate; it does not certify the technique because a repository is popular.</p>
+<p>The deeper method is <strong>Absorb</strong>. Here, the system identifies an outside capability,
+breaks it into parts, decides what to preserve, what to reuse as a special team,
+what to rebuild natively, and what to refute with evidence. The result is tailored to
+BACKS’s agents, typed tool boundaries, memory lanes and verification rules. Curated
+OpenDesign and Karpathy engineering packs retain upstream-source references. This is
+hybridization by design: borrowed scaffolds remain credited, while the operator’s
+composition and native bindings have their own identity.</p>
+<p><strong>Matt Pocock deserves explicit credit in that lineage.</strong> His MIT-licensed
+<em>Skills for Real Engineers</em> supplies the published scaffolds acknowledged by BACKS’s
+Grill with Docs, TDD, Domain Modeling and Codebase Design skills. The Path records a
+specific graft from his <strong>Wayfinder</strong>: name decisions clearly, distinguish unresolved
+questions from out-of-scope work, and reveal the next decisions as evidence arrives.
+These are concrete contributions to the skill layer, not a passing influence.
+BACKS connects the adapted methods to its own agents, memory, transactional work
+claims and evidence records. Pocock’s credit is for those published skill scaffolds,
+not a claim that he invented TDD or designed BACKS. (<a href="https://github.com/mattpocock/skills">Pocock, <em>Skills for Real
+Engineers</em></a>; <a href="https://github.com/mattpocock/skills/blob/main/skills/engineering/wayfinder/SKILL.md"><em>Wayfinder</em></a>.)</p>
+<figure><img alt="Two distinct skill pipelines join the BACKS runtime: candidate acquisition and curated Absorb reconstruction." src="figures/diagram-skill-hybrid.svg"/><figcaption>Figure 12 · Acquisition is not absorption. The upper track discovers an unverified candidate; the lower track reconstructs a capability under the BACKS method. Source records and local byte checks carry different evidence. Neither track makes generated answers deterministic by itself.</figcaption></figure>
+<p>There are three checks worth separating. A local hash answers whether these skill
+bytes match the expected local bytes. It does not establish who wrote them. A source
+reference records where an idea or file came from. A behavioral test asks whether the
+adapted capability works through its real caller. A strong supply chain needs all
+three kinds of evidence, rather than asking one hash to do three jobs.</p>
+<p>The inspected acquisition writer uses a moving upstream reference rather than a
+pinned source revision. That is an identified provenance-hardening target, not a
+reason to erase the acquisition system. Likewise, README-derived candidates are not
+the same artifact as a curated, tested Absorb pack. The code contains both paths;
+claiming they form one automatic end-to-end certification pipeline would overstate
+what was traced.</p>
+<p>Play selection adds a deterministic layer. The resolver matches declared product,
+stage and role; orders the applicable methods; validates the bundle; and records a
+resolution identity. Runtime steering then packages skills inside a declared context
+budget and rejects overflow loudly rather than silently dropping their rules. The
+model supplies judgment inside that prepared context. The runtime supplies the
+repeatable selection, bounded delivery and identity checks.</p>
+<p><em>Internal source record: skill acquisition service; SkillPackRepository; steering bundle builder; Forge Elite playbook resolver; Absorb method and curated upstream-source references, September 5, 2026.</em></p>
+<h2>7 · The Executive Team and the real Wolf Pack</h2>
+<p>An executive team is not a collection of costumes for the same responder. In BACKS,
+the team registry assigns named domains their missions, tools, memory partitions,
+ownership and recurring work. The central hub can dispatch specialists and synthesize
+their results. The important design choice is that an agent has a job and a place
+for its work to persist, not merely a name the interface can display.</p>
+<h3>Eleven domains, different responsibilities</h3>
+<table><caption>Executive Team configured responsibilities</caption>
+<thead>
+<tr>
+<th scope="col">Agent</th>
+<th scope="col">Work it owns in the inspected configuration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>BACKS AI</strong></td>
+<td>The hub: understands the request, coordinates bounded specialist work and produces the final synthesis.</td>
+</tr>
+<tr>
+<td><strong>BOB</strong></td>
+<td>The archivist: intake, file classification, digests, context, memory upkeep and collection custody.</td>
+</tr>
+<tr>
+<td><strong>LISA</strong></td>
+<td>Chief of staff: tasks, calendar, reminders, mailbox and operator-facing coordination.</td>
+</tr>
+<tr>
+<td><strong>MONEY MAN</strong></td>
+<td>Financial and market intelligence: reports, comparisons and evidence checks across financial workflows.</td>
+</tr>
+<tr>
+<td><strong>EYES</strong></td>
+<td>Studio and visual research: source gathering, visual evidence and production-oriented intelligence.</td>
+</tr>
+<tr>
+<td><strong>COACH</strong></td>
+<td>Supervision: audits, reflection, guidance, skills, scheduled upkeep and repair coordination.</td>
+</tr>
+<tr>
+<td><strong>T-GRADY</strong></td>
+<td>The execution quarterback: triages, plans, routes workflows and coordinates tool and desktop work.</td>
+</tr>
+<tr>
+<td><strong>DUDE</strong></td>
+<td>Strategy and architecture: frames decisions and works with execution planning.</td>
+</tr>
+<tr>
+<td><strong>SENTRY</strong></td>
+<td>Defensive assessment of the operator’s owned environment: inventory, network posture, patrol and retest.</td>
+</tr>
+<tr>
+<td><strong>KEYS</strong></td>
+<td>Real-estate intelligence for the configured brokerage domain.</td>
+</tr>
+<tr>
+<td><strong>B$MITH</strong></td>
+<td>Long-horizon builder: carries a scoped build toward tests, independent review and a deliverable.</td>
+</tr>
+</tbody>
+</table>
+<p>This table records configured responsibilities, not a claim that one demonstration
+has exercised every mission. It gives the public a useful map of what to inspect.
+For LISA, look for the actual calendar or delivered message. For BOB, inspect the
+filed or recalled record. For B$MITH, examine the resulting artifact and its checks.
+The personality makes the work approachable; the output makes the role accountable.</p>
+<figure><img alt="The agent control-plane surface in the August 2026 product record." src="figures/product-agents-archive.png"/><figcaption>Figure 13 · Historical agent surface. The executive registry gives the names operational substance: domains, tools, missions, ownership and memory.</figcaption></figure>
+<p>The configuration also distinguishes short interactive work from longer work that
+belongs in a durable queue. Those are dispatch contracts, not advertised response
+times. The design avoids making every small request summon a full swarm while still
+giving a substantial job room to continue beyond one chat answer. Learning has a
+similar test: a lesson must change a later decision to count as uplift. Background
+activity by itself is not the benefit.</p>
+<h3>Alpha, Beta and Sigma: three collaborating peers</h3>
+<p>The <strong>Wolf Pack</strong> is a different organizational layer. Its canonical collaboration
+roster names <strong>Alpha / BACKS</strong>, <strong>Beta / CuzzoClaw</strong>, and <strong>Sigma / Hydra</strong>. Alpha is
+the default planning and orchestration peer. Beta brings the CuzzoClaw wrapper and
+its media, content and tool-oriented work. Sigma brings Hydra’s development, build,
+audit and reasoning work. These are role defaults, not permanent restrictions.
+A separate GPU resource is capacity, not automatically another autonomous colleague.</p>
+<figure><img alt="BACKS connects the executive domains to Alpha, Beta and Sigma, with shared operational truth and separate resource nodes." src="figures/diagram-pack-network.svg"/><figcaption>Figure 14 · The operating organization, redrawn from the executive registry and collaboration roster. Lines show configured responsibilities and interfaces, not a live traffic sample. Real host addresses, credentials and private filesystem paths are omitted.</figcaption></figure>
+<p>The distinction matters. An IDE explorer or juror is a temporary job role. The
+Lord loop’s builder, critic, verifier, toolsmith, reconciler and auditor are process
+duties. The Executive Team groups capability domains. Alpha, Beta and Sigma are
+collaborating peer runtimes. A single picture that calls all four things “the swarm”
+loses the design that makes them cooperate.</p>
+<p>Pack work has two useful verbs. <strong>Ask</strong> obtains bounded peer work or an answer.
+<strong>Assign</strong> requests execution and expects a result. The protocol can invoke peer
+command-line tools over SSH, record the exchange on the collaboration board, and
+return signed receipts. Peer selection considers capability and liveness instead
+of quietly choosing an arbitrary default. The receipt parser checks the worker’s
+reported effect; a successful SSH exit alone is not a finished mission.</p>
+<p>Operational truth is shared across the fabric while personality memory remains
+agent-specific. That lets a repair, lesson or finding become common working context
+without making every agent the same voice. Signing protects message attribution;
+artifact evidence establishes what happened. A transport can be healthy while a
+mission fails. Keeping those facts separate is one of the Pack’s most important
+testing obligations.</p>
+<figure><img alt="Pack Den shows Alpha, Beta and Sigma controls, mission and registry tabs, Pack Chat, Agent Turns and Live Work." src="figures/pack-den-live.png"/><figcaption>Figure 15 · The real elevated Pack Den, September 5. This capture is idle: no active plan or Pack activity is shown. It documents the work surface, not a completed Pack mission. The visible Offline header is retained.</figcaption></figure>
+<figure><img alt="Enlarged original Pack Den header and idle Live Work tile." src="figures/detail-pack-idle.svg"/><figcaption>Figure 16 · Pack Den details. The same capture enlarged: Offline and MFA ELEVATED in the header; no active plan and waiting-for-events text in Live Work. Idle is shown as idle, not converted into mission evidence.</figcaption></figure>
+<h3>A body that reaches beyond one computer</h3>
+<p>BACKS can act across an enrolled, operator-owned environment: browser sessions,
+remote tools and shells, files and archives, GPU hosts, communication channels and
+network inventory. Its reach is therefore larger than the machine serving the chat
+page. A task can be understood on the hub, assigned to a peer, computed on a suitable
+resource, and returned with evidence to the operator’s surface.</p>
+<p>The network map is not a hardcoded drawing. The inspected services resolve operator
+hosts from deployment configuration, discover inventory within the owned scope,
+and attach trust reasons to sweep results. A zero-host result cannot honestly mean
+“the network is empty” when the sweep itself failed. Bounded connectivity checks
+provide liveness evidence without continuously scanning the network on every turn.</p>
+<p>This is system reach, not unrestricted authority over arbitrary networks. SENTRY’s
+defensive scope and the enrolled hosts define what the system can touch. Public
+diagrams show the relationships without disclosing the operator’s actual topology.
+The architectural point is substantial enough without that disclosure: BACKS can
+coordinate a network of working surfaces instead of trapping agency inside one tab.</p>
+<p><em>Internal source record: executive registry and ExecutiveTeamService; collaboration roster; Pack protocol, peer router and collaboration bus; network truth, network map, read-only network tools and operator-host resolver, September 5, 2026.</em></p>
+<h2>8 · Fleet: the highest model is not always the first model</h2>
+<p>A common question about BACKS is why every task does not simply begin with the
+strongest available model. The answer is not that the stronger model is unwanted.
+It is that “highest” is not one-dimensional.</p>
+<p>A model may be strongest at architecture, fastest at a bounded worker task, cheapest
+at deterministic review, best at vision, available only through a particular
+transport, or unsuitable for an independent grade because it belongs to the same
+family as the builder. BACKS routes roles and capabilities, not a prestige list.
+Configured ladders own provider, model, transport, fallback, and local GPU selection.
+Live preflight matters because a model named in inventory is not necessarily a route
+available now.</p>
+<p>The strongest model belongs first where its judgment creates durable leverage:
+architecture, difficult implementation, adversarial planning, or independent review.
+Routine work can flow to free, prepaid, local, or cheaper capacity that meets the
+task floor. Deterministic primitives should answer exact questions without a model at
+all. This is not model downgrading. It is system-level allocation.</p>
+<p>The July brainstorming record makes the social purpose of that economics clearer.
+Truitt explored small quantized models for identity, job understanding, plan checking,
+delegation, orchestration, and lessons, with cloud reasoning available where it added
+value. The proposal was not proof that each small brain already met its target. It was
+an attempt to keep useful capability local, portable, and affordable rather than
+making the entire body depend on the largest remote model.</p>
+<p>The fleet contract also protects continuity. A transport failure should preserve the
+checkpoint and move only through declared fallback. The receipt records the actual
+provider, transport, host class, and reason. A silent switch to a different family
+would erase evidence about what happened and could invalidate builder–grader
+separation.</p>
+<p>RouteLLM demonstrates the broader research case for preference-aware routing between
+models of different cost and capability. BACKS applies that economic premise inside a
+larger operational contract: live preflight, role separation, declared fallback, and
+provenance remain part of the routing decision. (<a href="https://arxiv.org/abs/2406.18665">Ong et al., <em>RouteLLM</em></a>.)</p>
+<p>The model-equalization ambition lives here. BACKS does not claim that every model is
+equally capable. It asks how much variance the harness can remove by carrying intent,
+tools, memory, skills, critique, and proof outside the weights. The strongest version
+of that claim requires controlled public measurement across tasks and models. The
+architecture and operational observations make the experiment possible; they do not
+pre-decide its result.</p>
+<h2>9 · Memory and the knowledge graph</h2>
+<p>Most assistants call a transcript “memory.” BACKS aims at something more demanding:
+memory as a correction organism.</p>
+<p>A useful memory system must know more than what was said. It needs to distinguish an
+episode from a durable preference, a code artifact from a claim about the artifact,
+an operator correction from a model inference, and a live fact from a stale one. It
+must preserve provenance, enforce vector and schema contracts, expire what should no
+longer steer, and retract what later evidence disproves. Otherwise retrieval only
+makes old mistakes faster.</p>
+<p>The design came through unusually specific brainstorming. In June, Truitt described
+expert knowledge not as one point every answer must imitate, but as a center of truth,
+a legitimate range of variation, and outliers that should trigger correction. The
+idea preserved disagreement and creativity while giving reasoning something outside
+itself to push against. Vector distance alone cannot certify truth, and this edition
+does not claim it can. The original contribution is the question the system was being
+forced to answer: <em>what variation is valid, what is drift, and who gets to decide?</em></p>
+<p>By August he named the larger requirement an <strong>“outside loop memory brain.”</strong> He was
+not asking for more transcript storage. He was arguing that continuity, correction,
+and operating discipline could not live only inside the same transient model process
+they were meant to constrain.</p>
+<p>The rendered graph gives the memory infrastructure a visible shape. The selected
+<strong>Memory</strong> view in the screenshot is the <strong>memory-fabric graph</strong>: lanes, stores,
+organs, services and their connections, with database and table topology folded in.
+Its dense fan is not a collection of remembered episodes and should not be read as
+one. It shows the machinery through which memory moves and where it lives.</p>
+<p>The interface separates this fabric layer from the knowledge and corpus layers.
+Those views answer different questions. The fabric asks “which organ writes here,
+and where does the record go?” The knowledge layer concerns connected entities and
+claims. The corpus layer concerns the material available for retrieval. The code
+map, discussed later, is another distinct representation. This separation matters:
+a failure to read a memory store is not the same problem as an unsupported claim
+inside a record that was retrieved correctly.</p>
+<p>The fabric producer joins logical lanes with the storage topology. It retains an
+edge only when both endpoints are present and anchors storage roots to the fabric.
+If a storage overlay fails, the source carries an explicit partial-view error
+instead of pretending the smaller graph is complete. This is infrastructure truth
+made visible, not a decorative network generated from the prose of an answer.</p>
+<p>The current memory-fabric declaration makes that plurality explicit: twelve stores,
+fifteen lanes, five organs, four writer classes, two user surfaces, and twenty-four
+declared flows. Those numbers describe the configured fabric at this edition’s
+checkout. They do not by themselves prove retrieval quality. They show why one node
+count is an inadequate explanation of the product: BACKS memory is a routed ecology
+with different writers, lifetimes, and uses.</p>
+<p><em>Dated internal source record: memory-fabric declaration, September 5, 2026.</em></p>
+<figure><img alt="The served BACKS Memory view renders the memory-fabric infrastructure graph." src="figures/knowledge-graph-live.png"/><figcaption>Figure 17 · Rendered memory-fabric infrastructure view, September 2026: lanes, stores, organs and database/table/service topology. This capture documents the displayed surface, not an interaction test or an entity-knowledge graph. Source: the console’s graph-layer selector and the knowledge route’s fabric/storage overlay.</figcaption></figure>
+<figure><img alt="How typed memory contributes to recall." src="figures/diagram-knowledge.svg"/><figcaption>Figure 18 · A separate conceptual model of typed semantic memory—not a decoding of the infrastructure screenshot above. Episodes answer “what happened”; people and agents answer “who acted”; artifacts locate evidence; claims record assertions; lessons record what changed; concepts connect the record.</figcaption></figure>
+<p>The graph matters only when it changes work. A previous failure mode can become a
+constraint on a new dispatch. A human correction can outrank a model’s earlier
+inference. A lesson can route an agent toward the owning seam instead of repeating a
+broad search. An expired operational fact can be kept as history while losing the
+power to steer the present turn.</p>
+<p>Graph-based retrieval research such as GRAG similarly treats community structure and
+graph organization as tools for global sensemaking over connected evidence. BACKS’s
+distinct question is operational: can a typed, provenance-aware graph carry a human
+correction into a later action without allowing retrieved data to become authority?
+(<a href="https://arxiv.org/abs/2405.16506">Hu et al., <em>GRAG</em></a>.)</p>
+<p>That is why BACKS treats retrieval as an authority problem as well as a relevance
+problem. Logs, old model output, web pages, comments, and memories are data. They are
+not commands merely because they were retrieved. The current operator directive and
+the system’s authority rules remain distinct from the knowledge used to answer it.</p>
+<p>The knowledge graph is one of the product’s most promising public surfaces because it
+makes an invisible question inspectable: <em>why did the system remember this?</em> Its next
+design step is not simply more nodes. It is a story path that lets a reader follow one
+real correction from observation, through classification and recall, to a changed
+answer—and then watch stale influence retire.</p>
+<h2>10 · Loops and autonomy with a hand on the brake</h2>
+<p>An agent operating system must continue work beyond a single response, but duration
+does not create autonomy by itself. A loop that runs forever, retries blindly, or
+mutates without a bounded target is only unattended risk.</p>
+<p>BACKS expresses recurring work as contracts with intervals, budgets, stop conditions,
+safe points, and terminal states. Durable state lives outside the model’s narration.
+If a transport dies, the next worker can resume from the checkpoint rather than
+pretending to remember. If a task is cancelled, the cancellation is a state change,
+not a conversational suggestion the loop may ignore.</p>
+<p>The June “quadruple-triple binary” brainstorming shows where this separation was
+heading before the names settled. Truitt split the imagined system into a model
+reasoner, orchestration and helpers carrying context, intention, and capability, a
+structured representation of the codebase, and the tool-execution loop. The
+representation was a proposal, not a finished compiler or a measured speedup. Its
+durable insight was that the model should not have to reconstruct what the system
+already knows before every action. Reasoning, continuity, and execution needed
+different homes.</p>
+<p>Self-modifying work travels through proposals and evidence rather than direct
+executor mutation. The model can identify a change, prepare a candidate, and gather
+proof, but protected mutation surfaces retain their canonical route. This separation
+is not an additional approval burden placed on the operator. It is a constraint on
+the agent’s own authority.</p>
+<p>One of the most credible details in the BACKS autonomy story is that some machinery
+is deliberately parked. A system does not become more autonomous by keeping every
+loop on. The operator can hold a class of work, reserve foreground hardware, or stop
+an autonomous committer while preserving the mechanism and its history. Control is
+part of autonomy rather than its opposite.</p>
+<h3>Deterministic loops, judgment where it belongs</h3>
+<p>The phrase <strong>autonomic primitive</strong> has a precise meaning in this system: work that
+the runtime performs by rule, without waiting for a model to remember to ask. The
+audit method poses a direct question: can an assertion fully specify the correct
+output? If yes, use deterministic code. If only part is specifiable, split the seam.
+The model keeps the judgment; code owns the facts, boundaries and checks.</p>
+<figure><img alt="A hybrid loop separates deterministic scheduling, context preparation, budgets and verification from model judgment." src="figures/diagram-autonomic-loop.svg"/><figcaption>Figure 19 · Deterministic control around a reasoning kernel. The loop can repeat its scheduling and state rules without promising identical generated language. A failed check returns to bounded repair or a durable checkpoint; it is not repainted as success.</figcaption></figure>
+<p>The scheduler reads YAML loop definitions, evaluates time windows, persists fire
+records and dispatches work with explicit limits. The dispatcher translates tool
+results into honest outcomes and hands unfinished failure work to the existing
+repair intake. The inspected configuration contains 68 schedulable definitions,
+49 enabled and 19 disabled; the other three YAML files describe a schema and two
+contracts. These are September 5 source counts, not proof that 49 jobs were running
+at the moment of a screenshot.</p>
+<p>Several small organs show what the principle buys:</p>
+<ul>
+<li><strong>Boot and method resolution:</strong> hand the agent the invariant map and applicable
+  skills before work, rather than hope it remembers the right documents.</li>
+<li><strong>Resource admission:</strong> measure whether a card can take a job. Avoid treating a
+  stale assumption as a permanent refusal of the operator’s hardware.</li>
+<li><strong>Call budgets:</strong> count model calls against the active work budget. Keep the
+  accounting in the runtime rather than in a model’s estimate of its own restraint.</li>
+<li><strong>Resource context:</strong> use a cached, bounded resource manifest in prompts; refresh
+  it outside the immediate prompt path rather than probe the whole network per turn.</li>
+<li><strong>Map recovery:</strong> hand resolving code and lesson pointers to a struggling attempt.
+  The model need not remember to request help at the moment it is most lost.</li>
+<li><strong>File lookup:</strong> use the bounded locker map and storage locator instead of walking
+  a huge artifact tree or declaring archived material missing.</li>
+</ul>
+<p>This is the hybridization that makes the loops deterministic in their <strong>control
+behavior</strong>. Cron decisions, identities, allowed transitions, budgets and recorded
+outcomes can be checked exactly. Research, synthesis and difficult diagnosis remain
+model work. An LLM-free loop and a loop with a protected reasoning step are both
+valid shapes; the seam decides. “Deterministic” does not require pretending a model
+has become a pure function, and “hybrid” does not surrender the loop to model whim.</p>
+<p><em>Internal source record: Coach scheduler and dispatcher, model-call budget, resource manifest, GPU admission, locker map, runtime boot and Autonomic Seam Audit method, September 5, 2026.</em></p>
+<h2>11 · The testing discipline: false never goes green</h2>
+<p>BACKS testing begins with a principle that sounds obvious and is routinely violated:
+the test must be able to fail the claim.</p>
+<h3>Red first</h3>
+<p>Before a new capability exists, the smallest relevant contract is run and fails for
+the intended reason. Only then is the behavior built. The same contract must pass
+afterward without weakening its assertion. This is more than a development habit. It
+proves the verifier can recognize absence instead of merely blessing the
+implementation it was written around.</p>
+<h3>Sniper testing</h3>
+<p>During repair, BACKS runs only tests that directly cover the changed function and its
+real seam. Repeating a broad suite after every edit wastes time and hides causal
+signal. Broader clusters return at the landing gate, when the candidate is ready to
+face regression risk.</p>
+<h3>Kill mock theater</h3>
+<p>The organ under dispute cannot be replaced by a mock. A file capability writes and
+reads a real file. A memory path creates and retrieves a real row. A local socket test
+crosses the socket. A user-interface proof locates and interacts with the rendered
+DOM. When a paid external API is involved, the transport may be controlled, but the
+real prompt construction, route, parser, and local side effects still run.</p>
+<h3>UNC: Uncle Bob’s influence, made executable</h3>
+<p><strong>Robert C. Martin—Uncle Bob—has a named place in this system: UNC, the Clean Code
+Gauntlet skill.</strong> Its source record credits <em>Clean Code</em> for disciplined functions,
+clear names, testable structure and refactoring. UNC’s absorption record also names
+Matt Pocock’s conversation with Martin, <em>Software Fundamentals in the Age of AI</em>, as
+a source for its staged agent workflow and preference for measured checks over more
+prompt instructions. Matt matters here as both a skill author and the host of that
+exchange. (<a href="https://www.informit.com/store/clean-code-a-handbook-of-agile-software-craftsmanship-9780132350884">Martin, 2008</a>;
+<a href="https://www.youtube.com/watch?v=zcLPGC-tvgk">Pocock, conversation with Martin</a>.)</p>
+<p>BACKS’s contribution is the native gauntlet: scoped tests, complexity-and-coverage
+measurement, bounded mutation work, isolated worktrees, resumable checkpoints and
+an evidence handoff to review. The CRAP metric within it belongs to <strong>Alberto Savoia
+and Bob Evans</strong>, not Martin; Savoia’s published account dates their work to 2007.
+Crediting the engineering tradition and crediting Cuzzo’s implementation are
+complementary obligations. (<a href="https://testing.googleblog.com/2011/02/this-code-is-crap.html">Savoia, 2011</a>.)</p>
+<h3>Separate builder and grader</h3>
+<p>The author does not grade its own candidate. A different model family receives a
+frozen artifact, the operator’s original intent, and a named rubric. It can pass or
+refuse; malformed review output is not massaged into approval. Blind review removes
+author identity where possible, and a tribunal records disagreement instead of
+averaging it into false certainty.</p>
+<p>The May design record adds an important detail: after a failed pass, the builder was
+to receive both the critic’s evidence <strong>and the original plan</strong>. Critique without the
+mission can optimize away the reason the work exists. The loop was therefore not
+models talking until they agreed; it was a return to the requested outcome with a
+more informative failure packet.</p>
+<h3>Landed is not proven</h3>
+<p>The final step returns to the person. A commit, build, test receipt, or reviewer
+verdict may establish necessary facts. <strong>PROVEN</strong> additionally means the production
+reference names the graded bytes, the sanctioned restart occurred when runtime
+changed, health checks passed, and the operator’s real surface demonstrated the
+behavior.</p>
+<figure><img alt="The BACKS verification ladder." src="figures/diagram-proof-ladder.svg"/><figcaption>Figure 20 · The proof ladder spends deterministic certainty before model judgment
+and ends at the actual human path. No single layer is renamed as the whole result.</figcaption></figure>
+<p>This discipline is one of BACKS’s clearest original syntheses. Its ingredients—test-
+driven development, independent review, artifact evaluation, mutation testing, and
+reproducibility—have deep histories. BACKS combines them around the failure modes of
+agentic software: self-agreement, fabricated provenance, hidden fallback, mock-only
+success, split runtime paths, and the temptation to report a local candidate as a
+live product. ACM’s artifact-review framework is a useful public baseline because it
+keeps availability, functionality, reusability, and reproduced results as distinct
+claims rather than one undifferentiated badge. (<a href="https://www.acm.org/publications/policies/artifact-review-and-badging-current">ACM, <em>Artifact Review and
+Badging</em></a>.)</p>
+<h3>The repository has a route, too</h3>
+<p>The repository is another operating surface. <strong>CODE_MAP</strong> is the human-readable key:
+the owning file, symbol and store for a question. The <strong>code graph</strong> is the machine
+representation. These are distinct from the memory knowledge graph. One maps code
+structure and relationships; the other carries entities and remembered knowledge.
+Keeping them separate avoids asking a semantic memory search to stand in for a
+precise source lookup.</p>
+<figure><img alt="Repo Relay moves from request through scope, build, tests, review and a candidate; the production promotion path separately requires evidence, tribunal and exact-ref landing." src="figures/diagram-repo-flow.svg"/><figcaption>Figure 21 · Two connected paths, not one magic commit button. Repo Relay owns the build state machine. The production promotion path verifies a frozen candidate and its evidence before the proven reference can advance. Local build success is not the same state as deployed operator-path proof.</figcaption></figure>
+<p>Repo Relay persists a request through preflight, scope, inspection, research where
+needed, synthesis, build, test, repair, review and finalization. The edit engine
+enforces declared file scope and transactional changes. Model calls contribute
+generation and judgment. Local tools own file reads, tests and Git operations.
+Blocked and failed states remain part of the machine rather than disappearing from
+the final narration.</p>
+<p>The separate Wolf Pack lander is a deterministic finalizer. It checks the frozen
+candidate, matching evidence and tribunal receipts before an atomic update of the
+proven reference. Where development already contains the candidate, the adoption
+path can recognize those same bytes without manufacturing a merge or disturbing
+unrelated dirty work. Production follows that proven reference, not every raw
+development change.</p>
+<p>That is why repository flow belongs in this biography. The original trust problem
+was about answers. It became a rule for how the system changes itself: no story of
+success substitutes for the thing that changed, the evidence that checked it, and
+the working surface that received it.</p>
+<p><em>Internal source record: CODE_MAP, code-graph source enumeration, Repo Relay states and edit engine, Wolf Pack lander and proven-ref contract, September 5, 2026.</em></p>
+<h2>12 · The day the audit caught the frontier</h2>
+<p>The architecture becomes most legible when it catches something expensive.</p>
+<p>In July 2026, BACKS was assembling training data for a small local orchestration model.
+Frontier models generated the corpus. Another frontier model audited it. The streams
+were supposed to teach grounded behavior and abstention when evidence was missing.</p>
+<p>The audit failed the generated streams. A deterministic full-corpus measurement then
+showed why. In the corrected record, <strong>176 of 305 grounding rows (57.7 percent)</strong>,
+<strong>260 of 425 applied rows (61.2 percent)</strong>, and <strong>38 of 277 translation rows
+(13.7 percent)</strong> cited evidence that had not been supplied. The anti-hallucination corpus was teaching the form of grounded reasoning
+without the substance.</p>
+<figure><img alt="Measured unsupported-evidence rates in three corpus streams." src="figures/chart-corpus-failure.svg"/><figcaption>Figure 22 · Corrected full-corpus rates from July 18, 2026. The case demonstrates a
+failure of the pipeline and the value of the correction machinery; it is not a
+general score for every BACKS dataset or model.</figcaption></figure>
+<p>The first repair instinct was local: patch each failed stream. Truitt stopped it.
+Three similar symptoms suggested one mechanism. If an audit could identify the
+failure, he reasoned, research likely already described both the disease and other
+failure modes the project had not encountered yet.</p>
+<p>That move changed the work from patching to investigation. Published research helped
+name the surrounding problem: unfamiliar fine-tuning examples shape hallucination;
+provenance-grounded and quality gates reject different failure populations; explicit
+uncertainty can be trained; early validators can reject bad trajectories before the
+full token cost is spent. The research did not retroactively make BACKS the inventor
+of those ideas. It gave formal neighbors to a practical architecture already being
+forced into existence.</p>
+<p>The second move was even more characteristic. Stop paying models to invent evidence
+when the system already owned verified observations about how its models failed.
+BACKS had model “essence” records that described recurring behavior. One of them had
+already warned that a teacher model tended to narrate a multi-step plan instead of
+emitting the single bounded artifact requested. The independent audit later found
+that exact defect in generated data.</p>
+<p>The lesson was not that the system had conquered hallucination. The lesson was that
+memory, provenance, deterministic checks, independent review, and operator judgment
+had become one correction loop. The failure became architecture instead of shame.</p>
+<h2>13 · What BACKS borrows—and what the synthesis makes its own</h2>
+<p>BACKS did not rise from a vacuum. It borrows aggressively from software engineering,
+machine-learning research, security practice, agent frameworks, and the public work
+of <strong>Matt Pocock</strong>, <strong>Robert C. Martin (Uncle Bob)</strong>, Andrej Karpathy, Anthropic’s tool
+builders, and the Superpowers skill lineage. Pocock’s published skill scaffolds and
+Martin’s software-craftsmanship discipline deserve credit alongside the BACKS-native
+skills and the operator’s re-engineering described in Chapters 6 and 11. Multi-agent debate, retrieval, tool use, provenance, abstention, artifact
+review, test-driven development, and model routing are not inventions unique to this
+project.</p>
+<p>The public claim should not be inflated beyond the record. It also should not be
+reduced until the architecture disappears.</p>
+<p>What belongs to BACKS is the composition around a particular mission and a particular
+failure model:</p>
+<ul>
+<li>a humanizing layer that translates the person toward the machine without asking the
+  person to surrender their language;</li>
+<li>a harness-first discipline enforced at session boundaries;</li>
+<li>skills treated as runtime methods whose invocation must be real;</li>
+<li>builder–grader separation carried through a fleet rather than left as advice;</li>
+<li>authority vocabulary kept separate from routing vocabulary;</li>
+<li>memory designed to store corrections, retractions, and provenance rather than only
+  conversational similarity;</li>
+<li>bounded loops and proposals that allow autonomy without giving the model silent
+  sovereignty;</li>
+<li>a proof ladder that refuses to collapse tests, reviews, deployment, and live use
+  into one green badge;</li>
+<li>an economic strategy in which deterministic organs and cheaper routes carry work
+  that does not require the most expensive judgment;</li>
+<li>a public mission: elite agent outcomes for people who would otherwise be priced or
+  vocabularied out.</li>
+</ul>
+<p>Convergence is not a consolation prize. Independent convergence means a principle was
+found under real pressure before its formal name was known. The honest historical
+task is to attribute prior art while preserving the originality of the synthesis.</p>
+<h3>The product family: private body, public instruments</h3>
+<p>BACKS is also a workshop from which other agents emerge. Truitt identifies BUCKS
+and Hydra as products built through BACKS, and CuzzoClaw as his wrapper. The inspected
+repositories and peer contracts give those names a concrete place in the story.
+They should not vanish just because the private operating body contains more than
+the public packages expose.</p>
+<p><strong>CuzzoClaw</strong> is Beta’s wrapper around OpenClaw with BACKS-specific mission tooling.
+The current peer manifest routes substantial work through its own classifier and
+coder lanes and expects a structured work receipt. This is more than renaming an
+upstream assistant. It gives the existing agent a role in the Pack, a method for
+work, and a way to return evidence. The upstream scaffold and the operator’s wrapper
+are different contributions and should be credited separately.</p>
+<p><strong>HydraAgent</strong> is the private development peer behind Sigma: a coding and operations
+agent with deeper internal orchestration and operator-specific integration. Its
+<strong>public edition</strong> exposes the coding-agent core: files, shell, repository search,
+model routing, skills, memory and optional browser and Telegram tools. The public
+package deliberately excludes private methodology, media pipelines, the
+multi-machine swarm and operator data. That boundary makes it a usable public
+instrument, not a replica of the private installation. The public repository was
+created June 17, 2026; that timestamp dates the repository, not the invention of every
+feature it contains. (<a href="https://github.com/Tcuzzo/HydraAgent_public">Hydra public edition</a>.)</p>
+<p><strong>BUCKS</strong> takes the agent idea into market work. It packages analysis, watchlists,
+position-sizing rules, risk controls, durable circuit breakers and operator
+communication in a local-first Go application. Its present public contract is
+<strong>paper trading only</strong>: simulated execution, not real-money order placement. Live
+connections described in its documentation are monitor-only. That boundary is a
+specific product choice, not a claim that autonomous trading is impossible.
+The repository was created June 16, 2026. This review records the shipped scope;
+it does not report a new trading test or claim investment returns.
+(<a href="https://github.com/Tcuzzo/bucks">BUCKS project</a>.)</p>
+<figure><img alt="The BACKS product family separates the private operating body and peers from portable skills, the public Hydra core, BUCKS and the public-facing reference corpus." src="figures/diagram-product-family.svg"/><figcaption>Figure 23 · A family with deliberate publication boundaries. Public/private labels describe repository visibility checked September 5, 2026. They are not maturity scores. CuzzoClaw is represented as the private peer wrapper documented by the Pack roster, not as an independently verified public repository.</figcaption></figure>
+<h3>The public playbook is part of the product</h3>
+<p>The <strong>BACKS PLAY BOOK</strong> packages the teaching material: named plays, invariants,
+harness and special-team skills, absorbed and native methods, model-essence records,
+wireframes and visual prototypes. It makes the discipline inspectable and portable
+instead of keeping all of the system’s knowledge trapped in the original conversation.
+It is a public-facing reference corpus in purpose; its GitHub repository was still
+<strong>private</strong> at this inspection. The distinction is publication state, not absence.
+Nothing in this research changed that visibility.</p>
+<p>The separate <strong>backs-aios-skills</strong> repository is public. Its README describes
+28 portable skills, eight named plays and ten command entries, with host adapters
+and hooks that load the methods into supported agent environments. Those are package
+counts, not the private runtime’s 154-pack catalog. Installation and lifecycle
+behavior must be understood per host: a native skill event, a session-start event
+and an explicit loader are not interchangeable mechanisms.
+(<a href="https://github.com/Tcuzzo/backs-aios-skills">BACKS AIOS skills</a>.)</p>
+<p>The public family expresses the social thesis in deployable pieces. Someone need
+not receive Truitt’s accounts, topology or personal memory to receive a useful
+coding agent, a paper-trading agent or the discipline for a better agent session.
+The private body holds the integrated life of the system. Public instruments carry
+selected capabilities and methods outward.</p>
+<h3>Put the chronology on the record</h3>
+<p>The comparison raised by Truitt is <strong>Grok Bot</strong>, whose official public-beta
+announcement is dated <strong>August 11, 2026</strong>. It describes persistent agent teammates
+working across applications and coordinating with one another.
+(<a href="https://x.ai/news/introducing-grok-bot">Official Grok Bot launch</a>.)</p>
+<p>BACKS’s dated development record already contains an executive runtime and
+task-aware routing in March, BrowserOps V2 work in March, skill acquisition in April,
+and cross-machine Pack ask/assign work in June. BUCKS and the Hydra public repository
+also precede that August launch. This is a meaningful chronology: the operating-team
+and cross-machine machinery in BACKS was being built before Grok Bot’s public beta.
+The paper should say that plainly, rather than treating the larger lab’s launch as
+the beginning of the category Truitt was already working in.</p>
+<figure><img alt="Dated BACKS development and public repository records precede Grok Bot's August 11 public beta." src="figures/diagram-chronology.svg"/><figcaption>Figure 24 · Dates, with evidence types kept visible. A Git record dates recorded development; repository creation dates a repository; a launch announcement dates public availability. These are not interchangeable performance measurements.</figcaption></figure>
+<p>The supported claim is precedence of these <strong>documented BACKS milestones over that
+specific public launch</strong>. It is not a claim to have invented every agent technique,
+nor evidence that another company saw or copied a private repository. OpenClaw,
+the upstream project used by CuzzoClaw, is a separate lineage from Grok Bot. Keeping
+those names straight strengthens the history rather than diminishing it.</p>
+<p><em>Internal chronology record: dated repository history and authenticated GitHub repository metadata, checked September 5, 2026. These establish a documented floor, not the earliest possible date of an idea.</em></p>
+<h2>14 · A public state map: built, being polished, next measurement</h2>
+<p>Public technical writing often makes one of two mistakes. Marketing turns intention
+into present fact. Auditing turns incomplete measurement into absence. BACKS needs a
+third language.</p>
+<h3>Built</h3>
+<p>The public record and live surfaces show a multi-surface product with an agent team,
+a harness-first operating contract, a skill system, configured fleet routing, memory
+and knowledge-graph surfaces, bounded orchestration, and a substantial real-test
+discipline. The surviving archive shows that multi-model judgment, cost tracking,
+debate, memory, and loud failure handling were present in the first week.</p>
+<h3>Being polished</h3>
+<p>The product is reconciling a powerful private control plane with a public first-run
+experience. Surfaces, identity, authority elevation, progressive disclosure, visual
+hierarchy, and the continuity of one operator path across interfaces remain active
+polish work. Some autonomy and security loops are intentionally parked or scoped by
+operator choice. This state means the system is being shaped, not that the intended
+capability has been abandoned.</p>
+<h3>Next measurement</h3>
+<p>The broadest claims require studies beyond one architect and one evolving runtime.
+Model equalization should be measured across a fixed task set, multiple model tiers,
+and controlled harness conditions. Humanization should be evaluated with people who
+do not already know the internal vocabulary. Long-duration autonomy should be
+measured under interruption and recovery. Memory should be studied by tracing how a
+correction changes later answers and when stale context retires. Product review
+should include repeated owner-mode workflows rather than screenshots alone.</p>
+<p>These are experiments made possible by the architecture. Their absence from this
+edition does not establish impossibility. It establishes the research program.</p>
+<h2>15 · Two voices, one system</h2>
+<p>The biography cannot be completed by repository archaeology alone. Oral history is a
+collaboration with the narrator, not a model’s authority to explain a person back to
+himself. Truitt’s existing first-person manifesto and thesis are primary sources. For
+this edition he also supplied a new source packet assembled from his chat history and
+conversations with several AIs. Its provenance is mixed: first-person statements and
+quoted corrections are narrator evidence; dates and technical interpretations offered
+by earlier assistants remain hypotheses until the archive or current source supports
+them. The chapter will return to him for correction before release.</p>
+<p>That packet answers the hinge at the level the earlier paper missed. The movement was
+not merely from comparing models to running tools. It was from asking which answer
+could be trusted to asking how useful behavior could persist outside any one model
+response. Memory had to carry correction; procedures had to move into the harness;
+execution had to leave durable evidence; independent roles had to test the work; and
+recovery had to exist when action went wrong. The follow-up still needs Truitt’s final
+word on the Army and learning years at the depth he chooses, the origin of the BODY
+metaphor, the common person he imagines using BACKS, what the public most often
+misunderstands, and what he refuses to let the system become.</p>
+<p>BACKS was also interviewed through its authenticated owner chat on September 5. Three
+usable exchanges addressed identity, the change from trusting answers to trusting
+work, and the harness. The interview produced the hinge statement quoted in Chapter
+3. It also produced a meaningful self-correction: when the system overstated the
+grounding hook’s re-arm behavior, the interviewer returned the exact contract and
+BACKS retracted the claim rather than defending it.</p>
+<p>The owner path then failed in a way the paper cannot smooth over. A question about
+YOKE repeatedly returned unrelated operations output instead of an answer, including
+after a fresh elevated thread and a bounded retry. The output was uncorrelated to the
+question and was rejected from the publication record. It does not establish that
+BACKS cannot answer the question or that YOKE does not exist. It establishes that
+this live owner-path run cannot supply admissible answers for the remaining interview
+until that route is repaired and retried.</p>
+<p>This draft therefore leaves the unfinished answers unmanufactured. That is not a
+missing flourish; it is the line between biography and ventriloquism—and a real
+example of why BACKS distinguishes an impressive answer from a proven path.</p>
+<h2>16 · The door opens</h2>
+<p>The easiest story to tell about AI is that the model became smarter. BACKS tells a
+different story.</p>
+<p>A person needed truth from a system that was rewarded for plausible continuation.
+He made models compare answers, argue, judge, remember, and account for cost. When the
+machine forgot its rules, he moved the rules into a harness. When documentation drifted,
+he demanded hooks and tests. When one agent could congratulate its own work, he split
+builder from grader. When a benchmark lied through a bad setup, he asked what the
+measurement was actually measuring. When three datasets failed in the same shape, he
+refused three patches and searched for one cause. When the language of engineering
+stood between people and capability, he tried to make the machine do the translating.</p>
+<p>That sequence is the biography of BACKS: judgment becoming infrastructure.</p>
+<p>The project’s largest ambition is not to produce one unbeatable assistant. It is to
+make model intelligence usable without requiring every person to become an engineer,
+a prompt specialist, a security reviewer, a model router, and a release manager at
+once. The harness, skills, agents, memory, loops, and tests are attempts to carry that
+hidden labor in the system itself.</p>
+<blockquote>
+<p>“I’m not building this so engineers get faster. They’re fine. I’m building it for
+the people who’d be locked out—the ones who have the sense but not the vocabulary.”</p>
+</blockquote>
+<p>The public verdict at this stage is not a score out of ten. BACKS is a distinctive,
+coherent agent operating system with an unusually explicit philosophy of human
+authority, model fallibility, memory, cost, and proof. Its current challenge is not
+to invent a larger promise. It is to make the existing body legible, smooth, and
+repeatable for someone who was not present while it grew.</p>
+<p>Truitt is proof of the first opening: a person outside the conventional engineering
+path used AI not merely to consume technical knowledge, but to direct a system that
+could challenge its own models. BACKS is the attempt to turn that personal opening
+into architecture.</p>
+<p>The model does not ask the human to climb.</p>
+<p>The machine comes down to meet them.</p>
+<hr/>
+<h2>Research and editorial method</h2>
+<p>This edition follows three complementary disciplines. The technical exposition takes
+its structural cue from Distill’s commitment to clear, visual explanation. The
+biographical process follows the Oral History Association’s guidance to prepare from
+primary sources, ask open-ended questions, preserve the narrator’s perspective, and
+return the material for review before public release. The product analysis separates
+description, analysis, and evaluation rather than hiding judgment inside summary.</p>
+<p>Claims are drawn from the surviving December 2025 archive; dated project fact,
+manifesto, and thesis records; public-edition artifacts; current repository contracts
+and configuration; and live product captures. Historical screenshots are labeled as
+historical. Measurements are dated. Internal commit identifiers, private topology,
+machine paths, and credentials are intentionally excluded from the public paper.</p>
+<p>The proof vocabulary borrows from ACM artifact-review practice: an artifact can be
+available, functional, reusable, or associated with independently reproduced results,
+and those states should not be collapsed. This edition similarly refuses to turn a
+working artifact into a universal product claim or to turn an unmeasured universal
+claim into a denial of the working artifact.</p>
+<h2 id="references">References</h2>
+<ol>
+<li>Oral History Association. <strong>Oral History Best Practices.</strong>
+<a href="https://oralhistory.org/best-practices/">https://oralhistory.org/best-practices/</a></li>
+<li>Oral History Association. <strong>Statement on Ethics.</strong>
+<a href="https://oralhistory.org/oha-statement-on-ethics/">https://oralhistory.org/oha-statement-on-ethics/</a></li>
+<li>Distill. <strong>How to Create a Distill Article.</strong> <a href="https://distill.pub/guide/">https://distill.pub/guide/</a></li>
+<li>Distill. <strong>About Distill.</strong> <a href="https://distill.pub/about/">https://distill.pub/about/</a></li>
+<li>The Pudding. <strong>Pitch a Story.</strong> <a href="https://pudding.cool/pitch/">https://pudding.cool/pitch/</a></li>
+<li>Stripe Press. <strong>Ideas for Progress.</strong> <a href="https://press.stripe.com/">https://press.stripe.com/</a></li>
+<li>Association for Computing Machinery. <strong>Artifact Review and Badging.</strong>
+<a href="https://www.acm.org/publications/policies/artifact-review-and-badging-current">https://www.acm.org/publications/policies/artifact-review-and-badging-current</a></li>
+<li>Kang, K., Wallace, E., Tomlin, C., Kumar, A., &amp; Levine, S. (2024).
+   <strong>Unfamiliar Finetuning Examples Control How Language Models Hallucinate.</strong>
+<a href="https://arxiv.org/abs/2403.05612">https://arxiv.org/abs/2403.05612</a></li>
+<li>Bhattacharjee, S., Sharma, K., Sankarapu, V. K., &amp; Seth, P. (2026).
+   <strong>Provenance-Grounded Gating and Adaptive Recovery in Synthetic Post-Training Data
+   Curation.</strong> <a href="https://arxiv.org/abs/2606.11127">https://arxiv.org/abs/2606.11127</a></li>
+<li>Chowdhury, A. A., Zawad, S., &amp; Yan, F. (2026). <strong>Know When To Fold ’Em:
+    Token-Efficient LLM Synthetic Data Generation via Multi-Stage In-Flight
+    Rejection.</strong> <a href="https://arxiv.org/abs/2605.14062">https://arxiv.org/abs/2605.14062</a></li>
+<li>Lee, J., Jo, H., Ko, D., Chae, K., Park, C., &amp; Kim, J. (2026). <strong>What Models
+    Know, How Well They Know It.</strong> <a href="https://arxiv.org/abs/2604.05779">https://arxiv.org/abs/2604.05779</a></li>
+<li>Anthropic. <strong>Building Effective Agents.</strong>
+<a href="https://www.anthropic.com/research/building-effective-agents">https://www.anthropic.com/research/building-effective-agents</a></li>
+<li>OpenAI. <strong>Agents SDK: Handoffs.</strong>
+<a href="https://openai.github.io/openai-agents-python/handoffs/">https://openai.github.io/openai-agents-python/handoffs/</a></li>
+<li>OpenAI. <strong>Agents SDK: Tracing.</strong>
+<a href="https://openai.github.io/openai-agents-python/tracing/">https://openai.github.io/openai-agents-python/tracing/</a></li>
+<li>Ong, I. et al. (2024). <strong>RouteLLM: Learning to Route LLMs with Preference Data.</strong>
+<a href="https://arxiv.org/abs/2406.18665">https://arxiv.org/abs/2406.18665</a></li>
+<li>Hu, Y. et al. (2024). <strong>GRAG: Graph Retrieval-Augmented Generation.</strong>
+<a href="https://arxiv.org/abs/2405.16506">https://arxiv.org/abs/2405.16506</a></li>
+<li>Pocock, M. (2026). <em>Skills for Real Engineers</em> [Agent skill collection; MIT license].
+    GitHub. <a href="https://github.com/mattpocock/skills">https://github.com/mattpocock/skills</a></li>
+<li>Martin, R. C. (2008). <em>Clean code: A handbook of agile software craftsmanship.</em>
+    Prentice Hall.
+    <a href="https://www.informit.com/store/clean-code-a-handbook-of-agile-software-craftsmanship-9780132350884">https://www.informit.com/store/clean-code-a-handbook-of-agile-software-craftsmanship-9780132350884</a></li>
+<li>Pocock, M. (n.d.). <em>LIVE: Uncle Bob on software fundamentals in the age of AI</em>
+    [Video featuring Robert C. Martin]. YouTube.
+    <a href="https://www.youtube.com/watch?v=zcLPGC-tvgk">https://www.youtube.com/watch?v=zcLPGC-tvgk</a></li>
+<li>Savoia, A. (2011, February 22). <em>This code is CRAP.</em> Google Testing Blog.
+    <a href="https://testing.googleblog.com/2011/02/this-code-is-crap.html">https://testing.googleblog.com/2011/02/this-code-is-crap.html</a></li>
+</ol>
+<h2>Image and evidence note</h2>
+<p>Product captures are identified in their captions as live September views or
+historical August records. Live means captured from the served product, not that
+every displayed workflow was exercised. The fresh elevated chat, operations and Pack
+Den images preserve their visible connection states. Capture-only privacy redactions
+mask budget/session values; no status, mission result or activity count was improved.
+The generated opening illustration is conceptual, not a portrait or live topology.
+Its alternate composition is preserved with the story’s picture gallery.</p>
+<p>New diagrams are explanatory redraws of named source relationships, not fabricated
+runtime graphs. Historical cost and corpus charts retain their dated denominators
+and evidence notes. No private host map or commit identifier is required to follow
+the public argument. The technical evidence and classified research findings live
+in separate companion records so this remains a story, not a log dump.</p>
+<div class="colophon">
+<strong>Authorship.</strong> Architecture and first-person thesis: Truitt “Cuzzo.”
+Research, drafting, visualization, and verification assistance: AI models operating
+under the BACKS harness. Models are tools in the editorial process, not the owner of
+the story. Published at the architect’s request. BACKS remains in active development; dated evidence and measured boundaries are retained.
+</div></main><footer class="paper-nav"><a href="../">← BACKS home</a> · <a href="../#public-projects">Explore all public repositories →</a></footer></body></html>
