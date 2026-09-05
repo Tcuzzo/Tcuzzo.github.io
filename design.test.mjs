@@ -31,3 +31,11 @@ test('landing additions extend three-tier tokens and reduced-motion rules', () =
   assert.match(read('landing-tokens.css'), /--hero-film-ratio/);
   assert.doesNotMatch(read('landing.css'), /#[0-9a-f]{3,8}\b|font-family:\s*["']/i);
 });
+
+test('editorial caption spacing and headline wrapping survive narrow screens', () => {
+  const h=read('index.html'), css=read('landing.css');
+  const thesis=h.match(/<p class="hero-thesis">([\s\S]*?)<\/p>/)[1];
+  assert.doesNotMatch(thesis, /<br\b/);
+  assert.match(css, /text-wrap: balance/);
+  assert.doesNotMatch(css, /\.research-feature p\s*\{/);
+});
