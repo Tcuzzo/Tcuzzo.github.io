@@ -67,3 +67,13 @@ h2 { font-size: var(--font-chapter-min); margin: 0 0 var(--s6); }
 @media (max-width: 720px) { body { padding: 0 var(--s4); font-size: var(--font-mobile-body); }.hero,.research-feature-body,.project-grid { grid-template-columns: 1fr; }.hero { padding: var(--s8) 0 var(--s12); gap: var(--s8); }.hero-media { justify-self: start; max-width: none; }.research-feature { padding: var(--s8) var(--s4); }.research-feature-body { gap: var(--s8); }.research-art { max-width: none; }h1 { font-size: var(--font-landing-mobile-title); }.hero-thesis { font-size: var(--font-quote); }.site-header { gap: var(--s3); }.site-header nav { gap: var(--s4); }.project:first-child { display: flex; padding: var(--s6); }.project:first-child h3 { font-size: var(--font-subhead); }#public-projects { padding-top: var(--s16); } }
 @media (prefers-reduced-motion: reduce) { .button { transition: none; } }
 @media print { video,.skip-link { display: none; }.hero { display: block; } }
+
+.seam { max-width: var(--site-max); margin: 0 auto; padding: var(--s20) var(--s6); }
+.seam .section-heading p:not(.eyebrow) { max-width: var(--landing-copy-measure); color: var(--ink-soft); }
+.seam-figure { margin: var(--s10) 0 var(--s8); padding: var(--s4); background: var(--panel); border: var(--border-hairline); border-radius: var(--r-medium); overflow-x: auto; }
+.seam-figure img { display: block; width: 100%; min-width: 42rem; height: auto; }
+.seam-figure figcaption { margin-top: var(--s3); color: var(--ink-soft); font-size: var(--font-caption); text-wrap: balance; }
+.seam-points { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: var(--s6); }
+.seam-points article { padding-top: var(--s3); border-top: var(--border-rule); }
+.seam-points h3 { margin: 0 0 var(--s2); font-size: var(--font-subhead); text-wrap: balance; }
+.seam-points p { margin: 0; color: var(--ink-soft); max-width: var(--landing-copy-measure); }

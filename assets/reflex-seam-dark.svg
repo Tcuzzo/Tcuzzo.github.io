@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 590" width="1280" height="590" role="img" aria-labelledby="title desc">
+<title id="title">The Reflex Seam</title>
+<desc id="desc">A deterministic runtime on the left holds state, files, rules and tests. A model judgment kernel on the right holds inference, policy, reversibility and priority. A jagged seam runs between them. Decision signals cross from the model to the runtime. State updates cross back from the runtime to the model. An unpermitted state change is refused loudly at the seam.</desc>
+<rect width="1280" height="590" fill="oklch(0.17 0.02 245)"/>
+<g font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+<rect x="48.0" y="56" width="470.0" height="430" rx="14" fill="oklch(0.225 0.022 245)" stroke="oklch(0.43 0.03 240)" stroke-width="1.5"/>
+<text x="76.0" y="100" fill="oklch(0.94 0.012 83)" font-size="20" font-weight="700" letter-spacing="0.07em">DETERMINISTIC RUNTIME</text>
+<text x="76.0" y="126" fill="oklch(0.76 0.02 240)" font-size="15">It owns the state, the lookups and the rules.</text>
+<rect x="80.0" y="160.0" width="194.0" height="128.0" rx="10" fill="oklch(0.285 0.024 245)" stroke="oklch(0.43 0.03 240)" stroke-width="1"/>
+<circle cx="177.0" cy="204.0" r="24" fill="none" stroke="oklch(0.43 0.03 240)" stroke-width="6" opacity="0.35"/><path d="M 177.0 180.0 A 24 24 0 1 1 153.0 204.0" fill="none" stroke="oklch(0.78 0.12 207)" stroke-width="3" stroke-linecap="round"/><path d="M 148.0 197.0 L 153.0 205.0 L 159.0 198.0" fill="none" stroke="oklch(0.78 0.12 207)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="177.0" y="252.0" fill="oklch(0.94 0.012 83)" font-size="15" font-weight="600" text-anchor="middle">State &amp;</text>
+<text x="177.0" y="271.0" fill="oklch(0.94 0.012 83)" font-size="15" font-weight="600" text-anchor="middle">the record</text>
+<rect x="292.0" y="160.0" width="194.0" height="128.0" rx="10" fill="oklch(0.285 0.024 245)" stroke="oklch(0.43 0.03 240)" stroke-width="1"/>
+<circle cx="389.0" cy="204.0" r="24" fill="none" stroke="oklch(0.43 0.03 240)" stroke-width="6" opacity="0.35"/><path d="M 389.0 180.0 A 24 24 0 1 1 365.0 204.0" fill="none" stroke="oklch(0.78 0.12 207)" stroke-width="3" stroke-linecap="round"/><path d="M 360.0 197.0 L 365.0 205.0 L 371.0 198.0" fill="none" stroke="oklch(0.78 0.12 207)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="389.0" y="252.0" fill="oklch(0.94 0.012 83)" font-size="15" font-weight="600" text-anchor="middle">Files &amp;</text>
+<text x="389.0" y="271.0" fill="oklch(0.94 0.012 83)" font-size="15" font-weight="600" text-anchor="middle">lookups</text>
+<rect x="80.0" y="306.0" width="194.0" height="128.0" rx="10" fill="oklch(0.285 0.024 245)" stroke="oklch(0.43 0.03 240)" stroke-width="1"/>
+<circle cx="177.0" cy="350.0" r="24" fill="none" stroke="oklch(0.43 0.03 240)" stroke-width="6" opacity="0.35"/><path d="M 177.0 326.0 A 24 24 0 1 1 153.0 350.0" fill="none" stroke="oklch(0.78 0.12 207)" stroke-width="3" stroke-linecap="round"/><path d="M 148.0 343.0 L 153.0 351.0 L 159.0 344.0" fill="none" stroke="oklch(0.78 0.12 207)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="177.0" y="398.0" fill="oklch(0.94 0.012 83)" font-size="15" font-weight="600" text-anchor="middle">Rules &amp;</text>
+<text x="177.0" y="417.0" fill="oklch(0.94 0.012 83)" font-size="15" font-weight="600" text-anchor="middle">gates</text>
+<rect x="292.0" y="306.0" width="194.0" height="128.0" rx="10" fill="oklch(0.285 0.024 245)" stroke="oklch(0.43 0.03 240)" stroke-width="1"/>
+<circle cx="389.0" cy="350.0" r="24" fill="none" stroke="oklch(0.43 0.03 240)" stroke-width="6" opacity="0.35"/><path d="M 389.0 326.0 A 24 24 0 1 1 365.0 350.0" fill="none" stroke="oklch(0.78 0.12 207)" stroke-width="3" stroke-linecap="round"/><path d="M 360.0 343.0 L 365.0 351.0 L 371.0 344.0" fill="none" stroke="oklch(0.78 0.12 207)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="389.0" y="398.0" fill="oklch(0.94 0.012 83)" font-size="15" font-weight="600" text-anchor="middle">Tests &amp;</text>
+<text x="389.0" y="417.0" fill="oklch(0.94 0.012 83)" font-size="15" font-weight="600" text-anchor="middle">proof</text>
+<rect x="762.0" y="56" width="470.0" height="430" rx="14" fill="oklch(0.225 0.022 245)" stroke="oklch(0.43 0.03 240)" stroke-width="1.5"/>
+<text x="1204.0" y="100" fill="oklch(0.94 0.012 83)" font-size="20" font-weight="700" letter-spacing="0.07em" text-anchor="end">MODEL JUDGMENT</text>
+<text x="1204.0" y="126" fill="oklch(0.76 0.02 240)" font-size="15" text-anchor="end">It owns the judgment. Nothing else.</text>
+<defs>
+<path id="ring-top-dark" d="M 910.81 185.68 A 140.0 140.0 0 0 1 1083.19 185.68" fill="none"/>
+<path id="ring-right-dark" d="M 1107.32 209.81 A 140.0 140.0 0 0 1 1107.32 382.19" fill="none"/>
+<path id="ring-bottom-dark" d="M 910.81 406.32 A 140.0 140.0 0 0 0 1083.19 406.32" fill="none"/>
+<path id="ring-left-dark" d="M 886.68 209.81 A 140.0 140.0 0 0 0 886.68 382.19" fill="none"/>
+</defs>
+<circle cx="997.0" cy="296.0" r="164.0" fill="none" stroke="oklch(0.43 0.03 240)" stroke-width="1.5"/>
+<circle cx="997.0" cy="296.0" r="120.0" fill="none" stroke="oklch(0.43 0.03 240)" stroke-width="1.5"/>
+<text fill="oklch(0.76 0.02 240)" font-size="13" font-weight="700" letter-spacing="0.1em"><textPath href="#ring-top-dark" startOffset="50%" text-anchor="middle">GOVERNED INFERENCE</textPath></text>
+<text fill="oklch(0.76 0.02 240)" font-size="13" font-weight="700" letter-spacing="0.1em"><textPath href="#ring-right-dark" startOffset="50%" text-anchor="middle">POLICY ENFORCEMENT</textPath></text>
+<text fill="oklch(0.76 0.02 240)" font-size="13" font-weight="700" letter-spacing="0.1em"><textPath href="#ring-bottom-dark" startOffset="50%" text-anchor="middle">REVERSIBILITY</textPath></text>
+<text fill="oklch(0.76 0.02 240)" font-size="13" font-weight="700" letter-spacing="0.1em"><textPath href="#ring-left-dark" startOffset="50%" text-anchor="middle">ADAPTIVE PRIORITY</textPath></text>
+<circle cx="997.0" cy="296.0" r="78.0" fill="oklch(0.285 0.024 245)" stroke="oklch(0.78 0.12 207)" stroke-width="2.5"/>
+<text x="997.0" y="291.0" fill="oklch(0.94 0.012 83)" font-size="17" font-weight="700" letter-spacing="0.04em" text-anchor="middle">JUDGMENT</text>
+<text x="997.0" y="314.0" fill="oklch(0.94 0.012 83)" font-size="17" font-weight="700" letter-spacing="0.04em" text-anchor="middle">KERNEL</text>
+<path d="M 640.0 30 L 652.0 44.7 L 640.0 59.5 L 628.0 74.2 L 640.0 88.9 L 652.0 103.7 L 640.0 118.4 L 628.0 133.1 L 640.0 147.9 L 652.0 162.6 L 640.0 177.3 L 628.0 192.1 L 640.0 206.8 L 652.0 221.5 L 640.0 236.3 L 628.0 251.0 L 640.0 265.7 L 652.0 280.5 L 640.0 295.2 L 628.0 309.9 L 640.0 324.7 L 652.0 339.4 L 640.0 354.1 L 628.0 368.9 L 640.0 383.6 L 652.0 398.3 L 640.0 413.1 L 628.0 427.8 L 640.0 442.5 L 652.0 457.3 L 640.0 472.0" fill="none" stroke="oklch(0.78 0.12 207)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 756.0 146.0 L 524.0 146.0" stroke="oklch(0.78 0.12 207)" stroke-width="2.5" stroke-linecap="round"/><path d="M 535.0 140.0 L 524.0 146.0 L 535.0 152.0" fill="none" stroke="oklch(0.78 0.12 207)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="572.0" y="114.0" width="136.0" height="22.0" rx="4" fill="oklch(0.17 0.02 245)"/><text x="640.0" y="130.0" fill="oklch(0.76 0.02 240)" font-size="13.5" font-weight="600" letter-spacing="0.04em" text-anchor="middle">decision signal</text>
+<path d="M 524.0 402.0 L 756.0 402.0" stroke="oklch(0.56 0.11 160)" stroke-width="2.5" stroke-linecap="round"/><path d="M 745.0 396.0 L 756.0 402.0 L 745.0 408.0" fill="none" stroke="oklch(0.56 0.11 160)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="583.4" y="370.0" width="113.2" height="22.0" rx="4" fill="oklch(0.17 0.02 245)"/><text x="640.0" y="386.0" fill="oklch(0.76 0.02 240)" font-size="13.5" font-weight="600" letter-spacing="0.04em" text-anchor="middle">state update</text>
+<rect x="623.0" y="182.0" width="34.0" height="184.0" rx="4" fill="oklch(0.17 0.02 245)"/>
+<text transform="translate(640.0 274.0) rotate(-90)" fill="oklch(0.94 0.012 83)" font-size="15" font-weight="700" letter-spacing="0.15em" text-anchor="middle" dy="5">THE REFLEX SEAM</text>
+<rect x="48.0" y="520" width="1184.0" height="58" rx="10" fill="oklch(0.285 0.024 245)" stroke="oklch(0.69 0.16 48)" stroke-width="1.5"/>
+<text x="640.0" y="556" fill="oklch(0.94 0.012 83)" font-size="16.5" font-weight="600" text-anchor="middle">If the model tries to change state without permission, the seam refuses it out loud. It never guesses quietly.</text>
+</g></svg>

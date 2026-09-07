@@ -1,6 +1,23 @@
 # BACKS AIOS — public website
 
-The hero and public project directory are in `index.html`. The illustrated research paper is in `research/index.html`. This is a static site: no runtime API, analytics, form, app credentials, or third-party JavaScript.
+The hero, the Reflex Seam section, and the public project directory are in
+`index.html`. The illustrated research paper is in `research/index.html`. This is a
+static site: no runtime API, analytics, form, app credentials, or third-party
+JavaScript.
+
+## The Reflex Seam diagram
+
+`tools/render_reflex_seam.py` renders `assets/reflex-seam-light.svg` and
+`assets/reflex-seam-dark.svg` from `design-tokens.json`. One generator, two themes,
+both resolved from the same `semantic.theme.*` keys, so light and dark cannot drift
+apart. No color, size, or font is hardcoded in the generator.
+
+    python3 tools/render_reflex_seam.py
+
+The landing page uses the light file, because the page paints a light ground. The dark
+file is for the sibling repositories' READMEs, where GitHub flips the theme. Both files
+are copied into `HydraAgent_public`, `bucks`, and `backs-aios-skills` and embedded
+there with `<picture>`.
 
 ## Check
 
