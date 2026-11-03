@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="light" name="color-scheme"/><title>How HydraAgent works — in plain English, with flow charts</title><link href="styles.css" rel="stylesheet"/><link href="https://tcuzzo.github.io/hydra/" rel="canonical"/><meta content="What HydraAgent needs to run, what every placeholder in its docs means, how a request travels, and what happens when a model fails. Written for non-engineers, with flow charts." name="description"/><meta content="article" property="og:type"/><meta content="BACKS AIOS" property="og:site_name"/><meta content="en_US" property="og:locale"/><meta content="https://tcuzzo.github.io/hydra/" property="og:url"/><meta content="How HydraAgent works" property="og:title"/><meta content="What HydraAgent needs to run, what every placeholder in its docs means, how a request travels, and what happens when a model fails. Written for non-engineers, with flow charts." property="og:description"/><meta content="https://tcuzzo.github.io/assets/og-card-hydra.png" property="og:image"/><meta content="https://tcuzzo.github.io/assets/og-card-hydra.png" property="og:image:secure_url"/><meta content="image/png" property="og:image:type"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="HydraAgent share card: the title 'How HydraAgent works' with the line 'Plain English, flow charts, no secrets.'" property="og:image:alt"/><meta content="summary_large_image" name="twitter:card"/><meta content="How HydraAgent works" name="twitter:title"/><meta content="What HydraAgent needs to run, what every placeholder means, and what happens when a model fails. With flow charts." name="twitter:description"/><meta content="https://tcuzzo.github.io/assets/og-card-hydra.png" name="twitter:image"/><meta content="HydraAgent share card: the title 'How HydraAgent works' with the line 'Plain English, flow charts, no secrets.'" name="twitter:image:alt"/></head><body>
+<nav aria-label="Hydra page navigation" class="page-nav"><a href="../">← BACKS home</a> · <a href="../#public-projects">Public repositories</a> · <a href="https://github.com/Tcuzzo/HydraAgent_public">HydraAgent on GitHub ↗</a></nav>
+<main>
+<header>
+<p class="kicker">03 / CODING &amp; OPERATIONS · HYDRAAGENT</p>
+<h1>How HydraAgent works</h1>
+<p class="deck">A plain-English guide for anyone, engineer or not: what Hydra needs, what each placeholder means, how a request travels, and what happens when a model says no.</p>
+</header>
+
+<h2 id="what">What Hydra is</h2>
+<p>Hydra is a helper you run in a <strong>terminal</strong>, the text window where you type commands. You give it a folder of code and a goal in plain words, such as “explain how login works” or “fix the failing test”. Hydra reads the files, decides what to do, asks your permission before it edits a file or runs a command, and then tells you what it did.</p>
+<p>Hydra does not contain an AI model itself. A <strong>model</strong> is the AI service that writes the answers, either one running on your own computer or one you pay for online. Hydra is the part that reads your files, keeps the model inside the rules, and keeps a record.</p>
+<figure><img alt="Flow chart. You type a goal. Hydra reads your folder and plans the work, then asks which model to use: a local model on your own computer through Ollama, a cloud model with your own key, or, optionally, the BACKS decision service, which picks the model for you. Every path ends in an answer plus a list of what Hydra changed." height="292" src="figures/overview.svg" width="1070"/><figcaption>The short version: one goal in, one answer out, with you choosing where the model runs.</figcaption></figure>
+
+<h2 id="needs">What you need</h2>
+<h3>Required</h3>
+<table><thead><tr><th>What</th><th>Why</th></tr></thead><tbody>
+<tr><td><strong>Python</strong> 3.11 or newer</td><td>Hydra is written in Python, a programming language. Your computer needs it installed to run Hydra.</td></tr>
+<tr><td><strong>pipx</strong></td><td>A small installer that puts Hydra in its own private space so it cannot break other programs.</td></tr>
+<tr><td>One model source</td><td>Something has to write the answers. Pick one: a local model (Ollama), a cloud key, or the ChatGPT sign-in through the Codex CLI. <code>hydra setup</code> walks you through it.</td></tr>
+</tbody></table>
+<h3>Optional</h3>
+<table><thead><tr><th>What</th><th>What it adds</th></tr></thead><tbody>
+<tr><td><strong>Ollama</strong></td><td>A free program that runs models on your own computer. Private, offline answers; nothing leaves your machine.</td></tr>
+<tr><td>A <strong>GPU</strong> (graphics card)</td><td>Makes local models fast. Without one they still work, only slower.</td></tr>
+<tr><td>A cloud model key</td><td>Answers from a paid online model. Keys are stored in your home folder under <code>~/.hydraAgent/workspace/</code>, never in your project.</td></tr>
+<tr><td>The <strong>BACKS decision service</strong></td><td>A separate server you run that picks the best available model for each job and switches to another when one fails. Hydra does not ship this server; you point Hydra at it with <code>HYDRA_BACKS_URL</code>.</td></tr>
+<tr><td><strong>Telegram</strong></td><td>Talk to Hydra from your phone.</td></tr>
+<tr><td><strong>Bubblewrap</strong></td><td>A Linux tool that fences a program in, so Hydra can run checks in a locked box.</td></tr>
+<tr><td><strong>MCP</strong></td><td>A standard way for AI tools to talk to each other. Lets other tools use Hydra, and Hydra use them.</td></tr>
+<tr><td>Memory embeddings</td><td>Lets Hydra find past notes by meaning, not only by exact words.</td></tr>
+</tbody></table>
+<figure><img alt="Setup map. Python 3.11 or newer, then the pipx installer, then Hydra. Hydra needs one model source: Ollama on your computer, a cloud model with your key, or the ChatGPT sign-in through the Codex CLI. Dotted lines lead to optional add-ons: a GPU for faster local models, the BACKS decision service set with HYDRA_BACKS_URL, Bubblewrap for locked-box checks, Telegram as a phone remote, MCP for tool sharing, and memory embeddings." height="685" src="figures/setup-map.svg" width="1211"/><figcaption>Setup and dependency map. Solid lines are required; dotted lines are optional.</figcaption></figure>
+
+<h2 id="placeholders">Placeholders: what they mean and where to set them</h2>
+<p>Hydra’s public docs never show anyone’s real computer names, network addresses, user names or keys. Wherever you would type your own value you see a <strong>placeholder</strong> in angle brackets, like <code>&lt;backs-host&gt;</code>. Replace the whole thing, brackets included, with your own value.</p>
+<table><thead><tr><th>Placeholder</th><th>What it means</th><th>Where you set it</th></tr></thead><tbody>
+<tr><td><code>&lt;your-model&gt;</code></td><td>The name of a model you installed or pay for.</td><td>On the command line, or in <code>hydra setup</code>.</td></tr>
+<tr><td><code>&lt;provider&gt;</code>, <code>&lt;model&gt;</code>, <code>&lt;family&gt;</code></td><td>Who serves a model, its name, and its maker, chosen per role (planner, doer, worker, auditor).</td><td>Your own role file, <code>.hydraAgent/hydra.yaml</code>, copied from the example file. It stays out of git.</td></tr>
+<tr><td><code>&lt;base-url&gt;</code>, <code>&lt;key-env&gt;</code></td><td>The web address of a model service, and the <em>name</em> of the setting that holds its key (never the key itself).</td><td>The same role file.</td></tr>
+<tr><td><code>&lt;backs-host&gt;</code></td><td>The name or network address of the computer running your BACKS decision service: <code>localhost</code> if it is the same computer, or your server’s address on your own network.</td><td><code>HYDRA_BACKS_URL</code>, or <code>BACKS_ENDPOINT</code> in <code>~/.hydraAgent/workspace/.env.backs</code>.</td></tr>
+<tr><td><code>&lt;port&gt;</code></td><td>The “door number” that service listens on.</td><td>Part of the same address: <code>http://&lt;backs-host&gt;:&lt;port&gt;</code>.</td></tr>
+<tr><td><code>&lt;needle-url&gt;</code></td><td>The same decision-service address, when a doc talks about its Needle part.</td><td>Same as above.</td></tr>
+<tr><td><code>&lt;YOUR_USER&gt;</code></td><td>Your login name on your computer.</td><td>Nowhere. Hydra uses <code>~</code>, your home folder, so it never needs it.</td></tr>
+<tr><td><code>&lt;BACKS_DEPLOY_ROOT&gt;</code></td><td>The folder that holds your own BACKS deployment, used by some bundled skills.</td><td>Your own machine. Never commit it.</td></tr>
+<tr><td><code>&lt;camera-mac-N&gt;</code>, <code>&lt;camera-lan-host-N&gt;</code></td><td>A camera’s hardware address and its address on your home network, in the camera-inventory skill.</td><td>Filled from your own cameras. Never commit real values.</td></tr>
+</tbody></table>
+<p>An <strong>environment variable</strong> is a named setting your terminal passes to programs. For example, <code>export HYDRA_BACKS_URL='http://&lt;backs-host&gt;:&lt;port&gt;'</code> sets the BACKS address for the current terminal.</p>
+<p class="note">Rules Hydra keeps: no hard-coded hosts, models or keys in its code; keys live in your home folder, outside any project; and an automated check fails the build if a real private address, device address, personal folder or private machine name is ever committed.</p>
+
+<h2 id="request">A request, step by step</h2>
+<p>A <strong>role</strong> is the kind of job: chatting, planning, building code, or grading work. A <strong>rung</strong> is one model option on a ladder for that role, best first. The BACKS decision service owns the ladder; Hydra only names the rung it wants. A <strong>receipt</strong> is the short note Hydra prints showing which rung actually answered.</p>
+<figure><img alt="Sequence chart. 1: You ask Hydra to fix the failing test. 2: Hydra picks the role. 3: Hydra asks the BACKS decision service which rungs serve that role. 4: The service returns an ordered rung chain, best first. 5: Hydra tries rung 1. 6: The rung answers, or refuses. 7: Hydra reports how that rung did back to the service. 8: Hydra gives you the answer plus a receipt naming the rung that answered." height="483" src="figures/request-flow.svg" width="1165"/><figcaption>Request flow with the optional BACKS decision service. Without it, Hydra talks straight to the model you configured.</figcaption></figure>
+
+<h2 id="failures">When a model fails</h2>
+<p>Models fail for ordinary reasons: a key expired, credit ran out, a model was retired, a server is busy. Hydra does not stop at the first failure. It works down the list, and only when nothing can answer does it tell you, in one line, what it tried.</p>
+<table><thead><tr><th>Code</th><th>What it means</th></tr></thead><tbody>
+<tr><td>401 / 403</td><td>The key was refused: wrong, expired, or out of credit.</td></tr>
+<tr><td>402</td><td>Payment required.</td></tr>
+<tr><td>404 / 410</td><td>That model is not available any more.</td></tr>
+<tr><td>408 / 429</td><td>Too slow, or too many requests right now.</td></tr>
+<tr><td>5xx</td><td>The service itself had a problem.</td></tr>
+<tr><td>Any other 4xx</td><td>The request itself was wrong, so sending it to the next rung would fail too. Hydra skips the rest of that chain.</td></tr>
+</tbody></table>
+<figure class="narrow"><img alt="Failure and fallback chart. Hydra tries rung 1 of the chain. A 401, 402, 403, 404, 410, 408, 429, 5xx or timeout moves it to the next rung, and so on while rungs remain, then to the role's own capability rung. Any other 4xx skips the rest of the chain. If the chain fails, Hydra tries the role's fallbacks from model_routing.yaml. If they all fail, it tries the local GPU rung only if one is configured with a real model. Any answer ends in an answer plus receipt; if nothing answers, Hydra prints a one-line error naming every rung tried and why." height="1294" src="figures/failure-flow.svg" width="608"/><figcaption>Failure and fallback flow. Every attempt is reported back to the decision service so it learns which rungs are healthy.</figcaption></figure>
+<ol>
+<li><strong>The rung chain.</strong> The decision service returns the rungs for this job, best first, and Hydra tries each in turn.</li>
+<li><strong>The role’s capability rung</strong> is the last try inside the chain.</li>
+<li><strong>Role fallbacks.</strong> If there is still no answer, <code>hydra ask</code> walks the fallbacks listed for that role in <code>hydra/model_routing.yaml</code>.</li>
+<li><strong>Local GPU, only if configured.</strong> If your setup has a local GPU rung with a real model assigned, Hydra tries it last. If not, it skips it rather than pretend.</li>
+<li><strong>One-line error.</strong> If nothing answered you see a single line, such as <code>ask error: no rung answered: &lt;rung&gt;: 403; &lt;rung&gt;: 429</code>, and the command exits with code 1 so scripts know it failed.</li>
+</ol>
+<p class="note">This chart describes Hydra once the rung-chain change in <a href="https://github.com/Tcuzzo/HydraAgent_public/pull/54">HydraAgent pull request #54</a> is merged. Until then, tool turns try only the role’s capability rung, and <code>hydra ask</code> falls back straight to the local GPU.</p>
+
+<h2 id="more">Read more</h2>
+<p>The full guide, with the same charts, lives in the repository: <a href="https://github.com/Tcuzzo/HydraAgent_public/blob/main/docs/HOW_HYDRA_WORKS.md">How Hydra works (plain English)</a>. To install, start with the <a href="https://github.com/Tcuzzo/HydraAgent_public/blob/main/QUICKSTART.md">Quickstart</a>.</p>
+</main>
+<footer><p>Charts are pre-rendered images, so this page runs no scripts. Sources: <code>hydra/charts/*.mmd</code> in the <a href="https://github.com/Tcuzzo/tcuzzo.github.io">website repository</a>.</p></footer>
+</body></html>

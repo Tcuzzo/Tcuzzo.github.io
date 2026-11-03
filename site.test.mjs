@@ -33,7 +33,7 @@ test('full corrected paper preserves chapters, figures, and source credits', () 
   for(const match of h.matchAll(/<img[^>]*src="([^"]+)"/g))assert.ok(existsSync(new URL('research/'+match[1],import.meta.url)),match[1]);
 });
 test('public pages have no executable app or operator-only data links', () => {
-  for(const page of ['index.html','research/index.html']){
+  for(const page of ['index.html','research/index.html','hydra/index.html']){
     const h=read(page);
     assert.doesNotMatch(h,/<script\b|<iframe\b|<form\b|operator_records|AUTHORITY_PROPOSAL|CANONICAL_LEDGER|file:\/\/|\/(?:opt|home|mnt)\//i);
     assert.doesNotMatch(h,/\b(?:192\.168\.\d+\.\d+|10\.\d+\.\d+\.\d+)\b/);
@@ -41,7 +41,7 @@ test('public pages have no executable app or operator-only data links', () => {
   assert.ok(existsSync(new URL('.nojekyll',import.meta.url)));
 });
 test('every public page ships a link-preview card backed by a real 1200x630 image', () => {
-  const pages = { 'index.html': 'https://tcuzzo.github.io/', 'research/index.html': 'https://tcuzzo.github.io/research/' };
+  const pages = { 'index.html': 'https://tcuzzo.github.io/', 'research/index.html': 'https://tcuzzo.github.io/research/', 'hydra/index.html': 'https://tcuzzo.github.io/hydra/' };
   for (const [page, canonical] of Object.entries(pages)) {
     const h = read(page);
     const tag = (attr, key) => h.match(new RegExp(`<meta[^>]*(?:${attr}="${key}"[^>]*content="([^"]*)"|content="([^"]*)"[^>]*${attr}="${key}")`));
@@ -64,4 +64,23 @@ test('every public page ships a link-preview card backed by a real 1200x630 imag
     assert.equal(url(tag('property', 'og:image:width')), '1200');
     assert.equal(url(tag('property', 'og:image:height')), '630');
   }
+});
+test('hydra explainer ships static flow charts, plain-English placeholders and no script', () => {
+  const h=read('hydra/index.html');
+  assert.match(h,/<link href="https:\/\/tcuzzo\.github\.io\/hydra\/" rel="canonical"\/>/);
+  const charts=[...h.matchAll(/<img alt="([^"]{40,})"[^>]*src="figures\/([\w-]+)\.svg"/g)];
+  const names=charts.map(m=>m[2]);
+  for(const required of ['setup-map','request-flow','failure-flow'])assert.ok(names.includes(required),required);
+  for(const name of names){
+    const svg=read(`hydra/figures/${name}.svg`);
+    assert.match(svg,/^<svg\b/);
+    assert.doesNotMatch(svg,/<script\b|<foreignObject\b|https?:\/\/(?!www\.w3\.org)/i, `${name}.svg must be self-contained static art`);
+    assert.ok(existsSync(new URL(`hydra/charts/${name}.mmd`,import.meta.url)),`${name}.mmd source`);
+  }
+  for(const placeholder of ['&lt;backs-host&gt;','&lt;port&gt;','&lt;your-model&gt;','HYDRA_BACKS_URL'])assert.ok(h.includes(placeholder),placeholder);
+  assert.doesNotMatch(h,/\b(?:172\.(?:1[6-9]|2\d|3[01])\.\d+\.\d+|100\.(?:6[4-9]|[7-9]\d|1[01]\d|12[0-7])\.\d+\.\d+)\b/);
+  assert.doesNotMatch(read('hydra/styles.css'),/#[0-9a-f]{3,8}\b|font-family:\s*["']/i);
+  const card=read('index.html').match(/<h3>HydraAgent<\/h3>[\s\S]*?<\/article>/)[0];
+  assert.match(card,/href="hydra\/"[^>]*>How Hydra works/);
+  assert.match(read('sitemap.xml'),/<loc>https:\/\/tcuzzo\.github\.io\/hydra\/<\/loc>/);
 });

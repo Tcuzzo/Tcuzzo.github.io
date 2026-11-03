@@ -1,0 +1,12 @@
+flowchart LR
+    You(["You type a goal"]) --> Hydra["Hydra reads your folder<br/>and plans the work"]
+    Hydra --> Model{"Which model?"}
+    Model -->|"Your own computer"| Local["Local model<br/>(Ollama)"]
+    Model -->|"Online service"| Cloud["Cloud model<br/>(your own key)"]
+    Model -->|"Optional"| Router["BACKS decision service<br/>picks the model for you"]
+    Local --> Answer(["Answer, plus what<br/>Hydra changed"])
+    Cloud --> Answer
+    Router --> Answer
+    class Answer ok;
+    class Hydra,Local,Cloud step;
+    class Router opt;
