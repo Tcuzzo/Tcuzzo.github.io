@@ -1,0 +1,20 @@
+flowchart TD
+    Start(["Hydra needs an answer"]) --> R1["Try rung 1 of the chain"]
+    R1 -->|"Answered"| Done(["Answer + receipt"])
+    R1 -->|"401 / 402 / 403<br/>404 / 410, 408 / 429<br/>5xx or timeout"| Rn["Try the next rung<br/>in the chain"]
+    Rn -->|"Answered"| Done
+    Rn -->|"Also failed"| More{"More rungs<br/>in the chain?"}
+    More -->|"Yes"| Rn
+    More -->|"No"| Cap["Try the role's own<br/>capability rung last"]
+    Cap -->|"Answered"| Done
+    Cap -->|"Failed"| FB["Try the role's fallbacks<br/>from model_routing.yaml"]
+    FB -->|"Answered"| Done
+    FB -->|"All failed"| GPU{"Is a local GPU rung<br/>configured with a real model?"}
+    GPU -->|"Yes"| Local["Try the local GPU rung"]
+    Local -->|"Answered"| Done
+    GPU -->|"No"| Err(["One-line error naming<br/>every rung tried and why"])
+    Local -->|"Failed"| Err
+    class Done ok;
+    class Err bad;
+    class R1,Rn,Cap,FB,Local step;
+    R1 -->|"Other 4xx: the request<br/>itself was wrong"| FB
