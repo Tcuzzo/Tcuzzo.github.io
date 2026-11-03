@@ -1,0 +1,17 @@
+flowchart TB
+    Py["Python 3.11+"] --> Px["pipx installer"] --> H["Hydra"]
+    H --> M{"Pick one<br/>model source"}
+    M --> O["Ollama on your computer<br/>(free, private)"]
+    M --> C["Cloud model<br/>(your key)"]
+    M --> X["ChatGPT sign-in<br/>(Codex CLI)"]
+    O -.->|"optional"| G["GPU<br/>(faster local models)"]
+    H -.->|"optional"| B["BACKS decision service<br/>HYDRA_BACKS_URL"]
+    H -.->|"optional"| T["Telegram<br/>(phone remote)"]
+    H -.->|"optional"| W["Bubblewrap<br/>(locked-box checks)"]
+    B ~~~ P["MCP<br/>(tool sharing)"]
+    T ~~~ E["Memory embeddings"]
+    H -.-> P
+    H -.-> E
+    class Py,Px,H,M req;
+    class O,C,X step;
+    class B,G,T,W,P,E opt;

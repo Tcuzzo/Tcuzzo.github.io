@@ -1,0 +1,47 @@
+@import url("../research/tokens.css");
+
+/* Hydra explainer page. Consumes research/tokens.css only: no raw colors or font names. */
+* { box-sizing: border-box; }
+html { background: var(--paper-deep); color: var(--ink); }
+body {
+  margin: 0 auto;
+  max-width: var(--max);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--font-body-size);
+  line-height: 1.6;
+  padding: var(--s8) clamp(var(--s6), 6vw, 88px) var(--s16);
+}
+a { color: var(--cyan-dark); overflow-wrap: anywhere; text-underline-offset: var(--s1); }
+a:focus-visible { outline: var(--border-focus) solid var(--focus); outline-offset: var(--s1); }
+h1, h2, h3, .kicker, nav, table, figcaption, .note { font-family: var(--font-display); }
+.page-nav { font-size: var(--font-caption); margin-bottom: var(--s8); }
+header { border-top: var(--border-cover) solid var(--cyan); padding-top: var(--s8); margin-bottom: var(--s12); }
+.kicker { font-size: var(--font-kicker); letter-spacing: 0.16em; text-transform: uppercase; color: var(--cyan-dark); margin: 0 0 var(--s4); }
+h1 { font-size: clamp(var(--font-chapter-min), 7vw, var(--font-chapter)); line-height: 1; letter-spacing: -0.02em; margin: 0 0 var(--s6); text-wrap: balance; }
+.deck { font-size: var(--font-deck); line-height: 1.3; color: var(--ink-soft); max-width: var(--cover-text-measure); margin: 0; }
+h2 { font-size: var(--font-subhead); line-height: 1.15; margin: var(--s16) 0 var(--s4); padding-top: var(--s4); border-top: var(--border-rule) solid var(--ink); }
+h3 { font-size: var(--font-detail); text-transform: uppercase; letter-spacing: 0.08em; color: var(--cyan-dark); margin: var(--s8) 0 var(--s2); }
+p { margin: 0 0 1em; }
+code { font-family: var(--font-mono); font-size: 0.85em; background: var(--paper-deep); padding: 0 var(--s1); border-radius: var(--r-small); }
+figure { margin: var(--s8) 0; padding: var(--s6); background: var(--panel); border: var(--border-hairline) solid var(--line); border-radius: var(--r-medium); box-shadow: var(--shadow); }
+figure img { display: block; width: 100%; height: auto; }
+figure.narrow img { max-width: 620px; margin: 0 auto; }
+figcaption { font-size: var(--font-caption); color: var(--ink-soft); margin-top: var(--s4); }
+table { width: 100%; border-collapse: collapse; font-size: var(--font-detail); margin: var(--s4) 0 var(--s8); }
+th, td { text-align: left; vertical-align: top; padding: var(--s2) var(--s3); border-bottom: var(--border-hairline) solid var(--line); }
+th { color: var(--ink-soft); font-weight: 700; }
+td code { white-space: nowrap; }
+ol li, ul li { margin-bottom: var(--s2); }
+.note { font-size: var(--font-detail); border-left: var(--border-callout) solid var(--orange); background: var(--paper-deep); padding: var(--s4) var(--s6); margin: var(--s6) 0; }
+footer { margin-top: var(--s16); padding-top: var(--s4); border-top: var(--border-hairline) solid var(--line); font-family: var(--font-display); font-size: var(--font-caption); color: var(--ink-soft); }
+@media (max-width: 720px) {
+  body { font-size: var(--font-mobile-body); }
+  table, thead, tbody, tr, th, td { display: block; }
+  thead { display: none; }
+  td { border: 0; padding: var(--s1) 0; }
+  tr { border-bottom: var(--border-hairline) solid var(--line); padding: var(--s3) 0; }
+  figure { padding: var(--s3); }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
