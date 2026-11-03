@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>BACKS AIOS share card — HydraAgent explainer</title>
+<!-- Renders the 1200x630 social share card at assets/og-card-hydra.png.
+     Consumes the same dark-theme tokens as og-card.html; no raw hex.
+     Regenerate: google-chrome --headless=new --window-size=1200,630 \
+       --screenshot=assets/og-card-hydra.png assets/og-card-hydra.html -->
+<style>
+:root{
+  --paper:oklch(0.17 0.02 245); --panel:oklch(0.225 0.022 245); --inset:oklch(0.285 0.024 245);
+  --ink:oklch(0.94 0.012 83); --ink-soft:oklch(0.76 0.02 240);
+  --cyan:oklch(0.78 0.12 207); --orange:oklch(0.69 0.16 48); --green:oklch(0.56 0.11 160);
+  --line:oklch(0.43 0.03 240);
+  --font-display:"Nimbus Sans Narrow","Arial Narrow",sans-serif;
+  --font-body:"C059","Century Schoolbook",serif;
+  --s2:8px; --s3:12px; --s4:16px; --s6:24px; --s8:32px; --s12:48px; --s16:64px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1200px;height:630px;overflow:hidden}
+body{background:var(--paper);color:var(--ink);font-family:var(--font-body);
+  display:grid;grid-template-columns:1fr 430px;border-top:10px solid var(--cyan)}
+.copy{padding:var(--s16) var(--s8) var(--s12) var(--s16);display:flex;flex-direction:column;justify-content:center;gap:var(--s6)}
+.eyebrow{font-family:var(--font-display);font-size:21px;letter-spacing:.16em;color:var(--cyan);font-weight:700}
+h1{font-family:var(--font-display);font-size:92px;line-height:.95;font-weight:700;letter-spacing:-.02em}
+.rule{width:96px;height:4px;background:var(--cyan)}
+.thesis{font-size:34px;line-height:1.2;max-width:20ch}
+.byline{font-family:var(--font-display);font-size:20px;color:var(--ink-soft);letter-spacing:.04em}
+.flow{display:flex;flex-direction:column;justify-content:center;gap:var(--s3);padding:var(--s12) var(--s12) var(--s12) 0;font-family:var(--font-display)}
+.node{border:2px solid var(--line);background:var(--panel);border-radius:10px;padding:var(--s3) var(--s4);font-size:24px;text-align:center}
+.node.go{border-color:var(--cyan)} .node.alt{border-color:var(--orange);background:var(--inset)} .node.ok{border-color:var(--green);border-radius:40px}
+.arrow{text-align:center;color:var(--ink-soft);font-size:22px;line-height:1}
+</style></head>
+<body>
+  <div class="copy">
+    <p class="eyebrow">HYDRAAGENT · PLAIN ENGLISH</p>
+    <h1>How HydraAgent works</h1>
+    <div class="rule"></div>
+    <p class="thesis">Plain English, flow charts, no secrets.</p>
+    <p class="byline">What it needs · what placeholders mean · what happens when a model fails</p>
+  </div>
+  <div class="flow" aria-hidden="true">
+    <div class="node go">You type a goal</div><div class="arrow">↓</div>
+    <div class="node">Try the best rung</div><div class="arrow">↓ refused? next rung</div>
+    <div class="node alt">Role fallbacks · local GPU</div><div class="arrow">↓</div>
+    <div class="node ok">Answer + receipt</div>
+  </div>
+</body></html>

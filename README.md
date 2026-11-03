@@ -1,9 +1,22 @@
 # BACKS AIOS — public website
 
 The hero, the Reflex Seam section, and the public project directory are in
-`index.html`. The illustrated research paper is in `research/index.html`. This is a
+`index.html`. The illustrated research paper is in `research/index.html`. The plain-English HydraAgent
+explainer is in `hydra/index.html`. This is a
 static site: no runtime API, analytics, form, app credentials, or third-party
 JavaScript.
+
+## The Hydra explainer
+
+`hydra/index.html` explains HydraAgent in plain English with four flow charts. The site
+ships no JavaScript, so the Mermaid sources in `hydra/charts/*.mmd` are rendered ahead of
+time to static SVG in `hydra/figures/`, with every color and the font stack read from
+`design-tokens.json`:
+
+    PUPPETEER_EXECUTABLE_PATH=/path/to/chrome python3 tools/render_hydra_charts.py
+
+It needs Node (`npx` fetches the Mermaid CLI) and a Chrome or Chromium. Commit the
+regenerated SVGs with any chart change.
 
 ## The Reflex Seam diagram
 

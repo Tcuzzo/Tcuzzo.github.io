@@ -1,0 +1,14 @@
+sequenceDiagram
+    autonumber
+    actor You
+    participant H as Hydra
+    participant R as BACKS decision service
+    participant L as Rung chain (models)
+    You->>H: "Fix the failing test"
+    H->>H: Pick the role (chat, plan, build, grade)
+    H->>R: Which rungs serve this role? (resolve)
+    R-->>H: Ordered rung chain, best first
+    H->>L: Try rung 1
+    L-->>H: Answer (or a refusal, see the failure chart)
+    H->>R: Report how that rung did (outcome)
+    H-->>You: Answer + receipt naming the rung that answered
