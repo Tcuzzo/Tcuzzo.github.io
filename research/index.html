@@ -203,7 +203,7 @@ committed and could undo.”<br/>
 <tr>
 <td>Proof</td>
 <td>Similarity, drift, referee judgment, visible errors</td>
-<td>Red-first and real-seam tests, cross-family review, landing evidence, restart, and operator-path demonstration</td>
+<td>Red-first and real-seam tests, fresh author-disjoint review, landing evidence, restart, and operator-path demonstration</td>
 </tr>
 <tr>
 <td>Recovery</td>
@@ -589,8 +589,8 @@ strongest available model. The answer is not that the stronger model is unwanted
 It is that “highest” is not one-dimensional.</p>
 <p>A model may be strongest at architecture, fastest at a bounded worker task, cheapest
 at deterministic review, best at vision, available only through a particular
-transport, or unsuitable for an independent grade because it belongs to the same
-family as the builder. BACKS routes roles and capabilities, not a prestige list.
+transport. Any capable model may grade, as long as the grading session is fresh and
+did not write the work. BACKS routes roles and capabilities, not a prestige list.
 Configured ladders own provider, model, transport, fallback, and local GPU selection.
 Live preflight matters because a model named in inventory is not necessarily a route
 available now.</p>
@@ -607,9 +607,9 @@ an attempt to keep useful capability local, portable, and affordable rather than
 making the entire body depend on the largest remote model.</p>
 <p>The fleet contract also protects continuity. A transport failure should preserve the
 checkpoint and move only through declared fallback. The receipt records the actual
-provider, transport, host class, and reason. A silent switch to a different family
-would erase evidence about what happened and could invalidate builder–grader
-separation.</p>
+provider, transport, host class, and reason. A silent switch to a different route
+would erase evidence about what happened and could hide whether the grading session
+was really fresh.</p>
 <p>RouteLLM demonstrates the broader research case for preference-aware routing between
 models of different cost and capability. BACKS applies that economic premise inside a
 larger operational contract: live preflight, role separation, declared fallback, and
@@ -784,7 +784,7 @@ and Bob Evans</strong>, not Martin; Savoia’s published account dates their wor
 Crediting the engineering tradition and crediting Cuzzo’s implementation are
 complementary obligations. (<a href="https://testing.googleblog.com/2011/02/this-code-is-crap.html">Savoia, 2011</a>.)</p>
 <h3>Separate builder and grader</h3>
-<p>The author does not grade its own candidate. A different model family receives a
+<p>The author does not grade its own candidate. A fresh session that did not write it receives a
 frozen artifact, the operator’s original intent, and a named rubric. It can pass or
 refuse; malformed review output is not massaged into approval. Blind review removes
 author identity where possible, and a tribunal records disagreement instead of
