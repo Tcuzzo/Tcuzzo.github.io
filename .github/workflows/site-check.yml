@@ -1,0 +1,60 @@
+name: Static site checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  site:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Check the committed site before rebuilding
+        run: node --test *.test.mjs
+      - name: Render the Mermaid sources with the installed browser
+        if: always()
+        env:
+          PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome
+          MERMAID_CLI: '@mermaid-js/mermaid-cli@11.17.1'
+        run: python3 tools/render_hydra_charts.py
+      - name: Check content, privacy, assets and layout contracts
+        if: always()
+        run: node --test *.test.mjs
+      - name: Require committed charts to match their sources
+        run: git diff --exit-code -- hydra/figures
+      - name: Capture the changed surfaces
+        if: always()
+        env:
+          PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome
+        run: |
+          set -euo pipefail
+          mkdir -p site-review
+          python3 -m http.server 4187 --bind 127.0.0.1 >site-review/server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid"' EXIT
+          for attempt in 1 2 3 4 5; do
+            if curl --fail --silent http://127.0.0.1:4187/ >/dev/null; then break; fi
+            sleep 1
+          done
+          curl --fail --silent http://127.0.0.1:4187/ >/dev/null
+          export SITE_REVIEW_TOOLS="$RUNNER_TEMP/site-review-tools"
+          npm install --prefix "$SITE_REVIEW_TOOLS" --no-save --ignore-scripts puppeteer@25.19.0 pngjs@7.0.0
+          node tools/capture_site.cjs
+      - name: Preserve rendered chart and review images
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: static-site-review
+          path: |
+            hydra/figures/*.svg
+            site-review/*.png
+            site-review/browser-checks.json
+          if-no-files-found: error

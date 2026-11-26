@@ -8,7 +8,7 @@ JavaScript.
 
 ## The Hydra explainer
 
-`hydra/index.html` explains HydraAgent in plain English with four flow charts. The site
+`hydra/index.html` explains HydraAgent in plain English with five flow charts. The site
 ships no JavaScript, so the Mermaid sources in `hydra/charts/*.mmd` are rendered ahead of
 time to static SVG in `hydra/figures/`, with every color and the font stack read from
 `design-tokens.json`:
@@ -17,6 +17,12 @@ time to static SVG in `hydra/figures/`, with every color and the font stack read
 
 It needs Node (`npx` fetches the Mermaid CLI) and a Chrome or Chromium. Commit the
 regenerated SVGs with any chart change.
+
+The November 25, 2026 update adds the source-reviewed Kev/Jev/Needle role router,
+distinguishes it from the adaptive completion router, and links Hydra's merged
+VM-installation evidence. The research paper retains its 24 original figures and
+dates the new source review separately from its September live captures. Native
+BACKS and CuzzoClaw health is not inferred from public CI or static diagrams.
 
 ## The Reflex Seam diagram
 
@@ -35,6 +41,12 @@ there with `<picture>`.
 ## Check
 
 Run `node --test *.test.mjs` from this directory. Serve this directory with any static HTTP server to preview the real pages. The authored sources need no install, build, or JavaScript to read.
+
+The static-site workflow checks the committed files before rebuilding the charts,
+then checks the rebuilt site and requires the committed SVGs to match. It uses
+Mermaid CLI 11.17.1 and the runner's installed Chrome. Desktop and narrow-screen
+captures of the changed sections are saved as a review artifact; they require
+visual review and are not a substitute for the content and privacy checks.
 
 ## Publish
 
