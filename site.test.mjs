@@ -26,7 +26,7 @@ test('bottom directory has every inventoried public repo and upstream fork credi
 });
 test('full corrected paper preserves chapters, figures, and source credits', () => {
   const h=read('research/index.html');
-  assert.equal((h.match(/<figure>/g)||[]).length,24);
+  assert.equal((h.match(/<figure>/g)||[]).length,25);
   for(const term of ['Matt Pocock','Robert C. Martin','Uncle Bob','Executive Team','Wolf Pack','BUCKS','HydraAgent','References'])assert.ok(h.includes(term),term);
   assert.match(h,/href="\.\.\/#public-projects"/);
   assert.doesNotMatch(h,/Final narrator approval has not yet been issued/);
@@ -77,7 +77,7 @@ test('hydra explainer ships static flow charts, plain-English placeholders and n
     assert.doesNotMatch(svg,/<script\b|<foreignObject\b|https?:\/\/(?!www\.w3\.org)/i, `${name}.svg must be self-contained static art`);
     assert.ok(existsSync(new URL(`hydra/charts/${name}.mmd`,import.meta.url)),`${name}.mmd source`);
   }
-  for(const placeholder of ['&lt;backs-host&gt;','&lt;port&gt;','&lt;your-model&gt;','HYDRA_BACKS_URL'])assert.ok(h.includes(placeholder),placeholder);
+  for(const placeholder of ['&lt;provider&gt;','&lt;your-model&gt;','&lt;base-url&gt;'])assert.ok(h.includes(placeholder),placeholder);
   assert.doesNotMatch(h,/\b(?:172\.(?:1[6-9]|2\d|3[01])\.\d+\.\d+|100\.(?:6[4-9]|[7-9]\d|1[01]\d|12[0-7])\.\d+\.\d+)\b/);
   assert.doesNotMatch(read('hydra/styles.css'),/#[0-9a-f]{3,8}\b|font-family:\s*["']/i);
   const card=read('index.html').match(/<h3>HydraAgent<\/h3>[\s\S]*?<\/article>/)[0];
