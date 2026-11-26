@@ -26,7 +26,7 @@
 <table><thead><tr><th>What</th><th>What it adds</th></tr></thead><tbody>
 <tr><td><strong>Ollama</strong></td><td>A program that can run downloaded models on your own computer. Local inference can work offline. Remote model endpoints, network tools and cloud fallbacks still use the network when you configure and authorize them.</td></tr>
 <tr><td>A <strong>GPU</strong> (graphics card)</td><td>Makes local models fast. Without one they still work, only slower.</td></tr>
-<tr><td>A cloud model key</td><td>Answers from a paid online model. Keys are stored in your home folder under <code>~/.hydraAgent/workspace/</code>, never in your project.</td></tr>
+<tr><td>A cloud model key</td><td>Answers from a paid online model. Keys are stored under <code>~/.hydraAgent/workspace/</code> by default. Keep key-bearing files outside your repository when overriding that location.</td></tr>
 <tr><td>The <strong>BACKS decision service</strong></td><td>A separate server you run that picks the best available model for each job and switches to another when one fails. Hydra does not ship this server; you point Hydra at it with <code>HYDRA_BACKS_URL</code>.</td></tr>
 <tr><td><strong>Telegram</strong></td><td>Talk to Hydra from your phone.</td></tr>
 <tr><td><strong>Bubblewrap</strong></td><td>A Linux tool that fences a program in, so Hydra can run checks in a locked box.</td></tr>
@@ -49,7 +49,7 @@
 <tr><td><code>&lt;camera-mac-N&gt;</code>, <code>&lt;camera-lan-host-N&gt;</code></td><td>A camera’s hardware address and its address on your home network, in the camera-inventory skill.</td><td>Filled from your own cameras. Never commit real values.</td></tr>
 </tbody></table>
 <p>An <strong>environment variable</strong> is a named setting your terminal passes to programs. For example, <code>export HYDRA_BACKS_URL='http://&lt;backs-host&gt;:&lt;port&gt;'</code> sets the BACKS address for the current terminal.</p>
-<p class="note">Rules Hydra keeps: no hard-coded hosts, models or keys in its code; keys live in your home folder, outside any project; and an automated check fails the build if a real private address, device address, personal folder or private machine name is ever committed.</p>
+<p class="note">Configure the model and endpoint you intend to use. Optional selectors can have default model names; a default does not prove that a model is installed. Provider files default to your home folder; <code>HYDRA_ENV_DIR</code> can override that location. Keep keys outside the repository. The public-source checks reject private topology and credential disclosures.</p>
 
 <h2 id="request">A request, step by step</h2>
 <p>A <strong>role</strong> is the kind of job: chatting, planning, building code, or grading work. A <strong>rung</strong> is one model option on a ladder for that role, best first. The BACKS decision service owns the ladder; Hydra only names the rung it wants. A <strong>receipt</strong> is the short note Hydra prints showing which rung actually answered.</p>

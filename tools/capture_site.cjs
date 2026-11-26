@@ -34,6 +34,7 @@ async function main() {
           }
         });
         await page.setViewport({ width, height: 1000, deviceScaleFactor: 1 });
+        await page.setCacheEnabled(false);
         const response = await page.goto(`http://127.0.0.1:4187${target.page}`, { waitUntil: 'networkidle0' });
         assert.equal(response.status(), 200, target.name);
         const element = await page.waitForSelector(target.anchor, { visible: true });
