@@ -26,7 +26,7 @@ ROOT = Path(__file__).resolve().parent.parent
 TOKENS = ROOT / "design-tokens.json"
 CHARTS = ROOT / "hydra" / "charts"
 FIGURES = ROOT / "hydra" / "figures"
-MERMAID_CLI = os.environ.get("MERMAID_CLI", "@mermaid-js/mermaid-cli@11")
+MERMAID_CLI = os.environ.get("MERMAID_CLI", "@mermaid-js/mermaid-cli@11.17.1")
 
 
 def resolve(doc: dict, ref):
