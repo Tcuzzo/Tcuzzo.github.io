@@ -1,0 +1,30 @@
+name: Read frozen public site artifact
+
+on:
+  push:
+    branches:
+      - diag/site-artifact-readback-20261126
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  collect:
+    if: github.repository == 'Tcuzzo/Tcuzzo.github.io'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+          sparse-checkout: tools/read_site_artifact.py
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        with:
+          python-version: '3.12'
+      - name: Read the frozen public evidence
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_PROMPT_DISABLED: '1'
+        run: python -I -B tools/read_site_artifact.py
