@@ -1,17 +1,14 @@
 flowchart TD
-    A["Request and configured roles"] --> V{"At least one role available?"}
-    V -- No --> U["Stop: no available capability"]
-    V -- Yes --> B{"Matching receipt still valid?"}
-    B -- Yes --> C["Reuse the recorded role decision"]
-    B -- No --> D["Needle scores role matches"]
-    D --> E["Fleet asks its typed decision ladder: local Kev rungs, then cloud Jev"]
-    E --> F{"Eligible typed choice passes confidence and probability checks?"}
-    F -- Yes --> J["Record the selected role and reason"]
-    F -- No --> G{"Needle choice is available and passes similarity and margin checks?"}
-    G -- Yes --> J
-    G -- No --> H["First available fallback: build, work, then plan"]
-    H --> J
-    class A,D,E,H step
-    class C,J ok
-    class B,F,G,V req
-    class U bad
+    Request["Typed decision request"] --> Config["Read public provider configuration"]
+    Config --> Route{"Applicable configured route"}
+    Route --> Local["Local decision model"]
+    Route --> Cloud["Direct cloud decision model"]
+    Local --> Reply["Record the model result"]
+    Cloud --> Reply
+    Reply --> Caller["Return result to the caller for its checks"]
+    Caller -- Tool proposal --> Policy["Validate tool arguments and apply policy"]
+    Policy --> Tool["Run permitted tool"]
+    Tool --> Result["Record the actual tool result"]
+    class Request,Config,Local,Cloud,Reply,Caller,Tool step;
+    class Route,Policy req;
+    class Result ok;

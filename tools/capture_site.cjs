@@ -12,6 +12,10 @@ const targets = [
   { name: 'hydra', page: '/hydra/', anchor: '#routing' },
   { name: 'research', page: '/research/', anchor: '#november-routing' },
   { name: 'router', page: '/hydra/', anchor: '#routing-map', element: true },
+  { name: 'hydra-evidence', page: '/hydra/', anchor: '#verified' },
+  { name: 'hydra-console', page: '/hydra/', anchor: '#console-output' },
+  { name: 'research-evidence', page: '/research/', anchor: '#november-evidence' },
+  { name: 'research-console', page: '/research/', anchor: '#console-evidence' },
 ];
 
 async function main() {
@@ -70,7 +74,7 @@ async function main() {
         await page.close();
       }
     }
-    assert.equal(results.length, 8);
+    assert.equal(results.length, 16);
   } finally {
     await fs.writeFile('site-review/browser-checks.json', JSON.stringify(results, null, 2) + '\n');
     await browser.close();
