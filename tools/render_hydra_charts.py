@@ -93,6 +93,7 @@ def config(doc: dict) -> dict:
     c = palette(doc)
     return {
         "theme": "base",
+        "handDrawnSeed": 42,
         "htmlLabels": False,
         "flowchart": {"htmlLabels": False, "curve": "basis", "padding": 12},
         "sequence": {"mirrorActors": False},
