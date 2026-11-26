@@ -32,6 +32,8 @@ jobs:
         run: git diff --exit-code -- hydra/figures
       - name: Capture the changed surfaces
         if: always()
+        env:
+          PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome
         run: |
           set -euo pipefail
           mkdir -p site-review
@@ -43,27 +45,9 @@ jobs:
             sleep 1
           done
           curl --fail --silent http://127.0.0.1:4187/ >/dev/null
-          for width in 1440 390; do
-            google-chrome --headless --no-sandbox --disable-gpu --hide-scrollbars \
-              --window-size="$width,1000" --virtual-time-budget=2000 \
-              --screenshot="site-review/home-$width.png" \
-              'http://127.0.0.1:4187/#november-title'
-            google-chrome --headless --no-sandbox --disable-gpu --hide-scrollbars \
-              --window-size="$width,1000" --virtual-time-budget=2000 \
-              --screenshot="site-review/hydra-$width.png" \
-              'http://127.0.0.1:4187/hydra/#routing'
-            google-chrome --headless --no-sandbox --disable-gpu --hide-scrollbars \
-              --window-size="$width,1000" --virtual-time-budget=2000 \
-              --screenshot="site-review/research-$width.png" \
-              'http://127.0.0.1:4187/research/#november-routing'
-            google-chrome --headless --no-sandbox --disable-gpu --hide-scrollbars \
-              --window-size="$width,1000" --virtual-time-budget=2000 \
-              --screenshot="site-review/router-$width.png" \
-              'http://127.0.0.1:4187/hydra/#routing-map'
-            for page in home hydra research router; do
-              test -s "site-review/$page-$width.png"
-            done
-          done
+          export SITE_REVIEW_TOOLS="$RUNNER_TEMP/site-review-tools"
+          npm install --prefix "$SITE_REVIEW_TOOLS" --no-save --ignore-scripts puppeteer@25.19.0 pngjs@7.0.0
+          node tools/capture_site.cjs
       - name: Preserve rendered chart and review images
         if: always()
         uses: actions/upload-artifact@v4
@@ -72,4 +56,5 @@ jobs:
           path: |
             hydra/figures/*.svg
             site-review/*.png
+            site-review/browser-checks.json
           if-no-files-found: error
