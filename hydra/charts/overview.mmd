@@ -1,12 +1,12 @@
-flowchart LR
-    You(["You type a goal"]) --> Hydra["Hydra reads your folder<br/>and plans the work"]
-    Hydra --> Model{"Which model?"}
-    Model -->|"Your own computer"| Local["Local model<br/>(Ollama)"]
-    Model -->|"Online service"| Cloud["Cloud model<br/>(your own key)"]
-    Model -->|"Optional"| Router["BACKS decision service<br/>picks the model for you"]
-    Local --> Answer(["Answer, plus what<br/>Hydra changed"])
-    Cloud --> Answer
-    Router --> Answer
-    class Answer ok;
-    class Hydra,Local,Cloud step;
-    class Router opt;
+flowchart TD
+    Goal["Your task"] --> H["Standalone Hydra"]
+    H --> Choice{"Configured model source"}
+    Choice --> Local["Local Ollama"]
+    Choice --> Cloud["Direct cloud provider"]
+    Local --> Policy["Validate proposed tools and apply policy"]
+    Cloud --> Policy
+    Policy --> Tool["Run permitted action in the workspace"]
+    Tool --> Result["Answer and actual results"]
+    class Goal,H,Local,Cloud,Tool step;
+    class Choice,Policy req;
+    class Result ok;

@@ -20,7 +20,7 @@ test('the research entry shows existing editorial art without altering the paper
   assert.match(h, /class="research-art"/);
   assert.match(h, /src="research\/figures\/backs-operating-body-editorial.png"/);
   assert.match(h, /Conceptual editorial illustration/);
-  assert.equal((read('research/index.html').match(/<figure>/g)||[]).length,24);
+  assert.equal((read('research/index.html').match(/<figure>/g)||[]).length,25);
 });
 
 test('landing additions extend three-tier tokens and reduced-motion rules', () => {
